@@ -968,7 +968,7 @@ pre .javascript .function {
     left: 0;
     width: 100%;
     height: 45px;
-    background: #2a2a2a;
+    background: rgba(42,42,42,0.188);
     z-index: 999;
   }
 }
@@ -992,7 +992,7 @@ pre .javascript .function {
     left: 0;
     width: 100%;
     height: 45px;
-    background: #2a2a2a;
+    background: rgba(42,42,42,0.188);
     z-index: 999;
   }
 }
@@ -1021,7 +1021,7 @@ pre .javascript .function {
     top: 0;
     width: 50px;
     height: 100%;
-    background: #2a2a2a;
+    background: rgba(42,42,42,0.188);
   }
   #sidebar a#go-top {
     position: absolute;
