@@ -49,8 +49,8 @@
   </style>
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="shade"></div>
+  <div id="bg" class="bg"></div>
+  <div id="shade" class="shade"></div>
   <div id="container">
     <div id="wrap">
       <div class="outer">
@@ -118,6 +118,7 @@
   			<li><a href="https://github.com/AndreamApp" target="_blank"><i class="icon icon-github"></i></a></li>
   		
   		
+		<li><a href="#" onclick="var blur = document.getElementById('bg').style.filter; document.getElementById('bg').style.filter = (blur==='blur(0px)') ? 'blur(10px)' : 'blur(0px)'"><i class="icon" ></i></a></li>
   	</ul>
   </nav>
   <a id="go-top" href="#"><i class="icon icon-up"></i></a>
@@ -137,7 +138,7 @@
 
     </div>
   </div>
-    <!--<nav id="mobile-nav">
+    <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
   
@@ -149,7 +150,7 @@
   
     <a href="https://github.com/AndreamApp" class="mobile-nav-link">Github</a>
   
-</nav>-->
+</nav>
     
 
 <script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>

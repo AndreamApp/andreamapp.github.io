@@ -139,7 +139,11 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(0px);
+  filter: blur(10px);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
 }
 .shade {
   position: fixed;
