@@ -974,6 +974,7 @@ pre .javascript .function {
 }
 @media screen and (max-width: 479px) {
   .mobile-nav-link {
+    width: 20%;
     float: left;
     color: #fff;
     text-decoration: none;
@@ -998,6 +999,7 @@ pre .javascript .function {
 }
 @media screen and (min-width: 480px) and (max-width: 857px) {
   .mobile-nav-link {
+    width: 20%;
     float: left;
     color: #fff;
     text-decoration: none;
