@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://andreamapp.com/"/>
-  <updated>2018-09-20T16:39:01.264Z</updated>
+  <updated>2018-09-22T07:36:03.568Z</updated>
   <id>http://andreamapp.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决npm install -g not found</title>
+    <link href="http://andreamapp.com/2018/09/22/temp/"/>
+    <id>http://andreamapp.com/2018/09/22/temp/</id>
+    <published>2018-09-22T06:29:36.000Z</published>
+    <updated>2018-09-22T07:36:03.568Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Codeforces 1051</title>
