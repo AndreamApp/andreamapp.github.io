@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://andreamapp.com/"/>
-  <updated>2018-09-29T07:56:56.317Z</updated>
+  <updated>2018-10-02T11:01:49.813Z</updated>
   <id>http://andreamapp.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>To everyone new to the CODING world like me</title>
+    <link href="http://andreamapp.com/2018/10/02/To%20everyone%20new%20to%20the%20CODING%20world%20like%20me/"/>
+    <id>http://andreamapp.com/2018/10/02/To everyone new to the CODING world like me/</id>
+    <published>2018-10-02T03:59:35.000Z</published>
+    <updated>2018-10-02T11:01:49.813Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>盘点常见又不了解的名词</title>
+    <link href="http://andreamapp.com/2018/10/01/%E7%9B%98%E7%82%B9%E5%B8%B8%E8%A7%81%E5%8F%88%E4%B8%8D%E4%BA%86%E8%A7%A3%E7%9A%84%E5%90%8D%E8%AF%8D/"/>
+    <id>http://andreamapp.com/2018/10/01/盘点常见又不了解的名词/</id>
+    <published>2018-10-01T10:47:47.000Z</published>
+    <updated>2018-10-02T10:53:38.294Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>从做一个计算器出发学习CSS</title>
