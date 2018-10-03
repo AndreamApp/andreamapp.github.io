@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>【零零碎碎】Linux命令之情景交融 | Andream</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. yum -y install中的-y是什么就是当遇到Is this OK[y/d/N]提问时自动回答y yum速查 2. netstat查看端口被哪个程序占用：netstat -lptu 3. 单端口多服务 —— Nginx安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。 How to Configure NGI">
+<meta name="keywords" content="零零碎碎">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【零零碎碎】Linux命令之情景交融">
+<meta property="og:url" content="http://andreamapp.com/2018/10/01/【零零碎碎】Linux命令之情景交融/index.html">
+<meta property="og:site_name" content="Andream">
+<meta property="og:description" content="1. yum -y install中的-y是什么就是当遇到Is this OK[y/d/N]提问时自动回答y yum速查 2. netstat查看端口被哪个程序占用：netstat -lptu 3. 单端口多服务 —— Nginx安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。 How to Configure NGI">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-03T11:45:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【零零碎碎】Linux命令之情景交融">
+<meta name="twitter:description" content="1. yum -y install中的-y是什么就是当遇到Is this OK[y/d/N]提问时自动回答y yum速查 2. netstat查看端口被哪个程序占用：netstat -lptu 3. 单端口多服务 —— Nginx安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。 How to Configure NGI">
+  
+    <link rel="alternative" href="/atom.xml" title="Andream" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <style>
+	/* width */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #0005; 
+	}
+	 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #ddd; 
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #f0f0f0; 
+	}
+  </style>
+</head>
+<body>
+  <div id="bg" class="bg"></div>
+  <div id="shade" class="shade"></div>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-【零零碎碎】Linux命令之情景交融" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【零零碎碎】Linux命令之情景交融
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/10/01/【零零碎碎】Linux命令之情景交融/" class="article-date">
+  <time datetime="2018-10-01T10:47:47.000Z" itemprop="datePublished">2018-10-01</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-yum-y-install中的-y是什么"><a href="#1-yum-y-install中的-y是什么" class="headerlink" title="1. yum -y install中的-y是什么"></a>1. yum -y install中的-y是什么</h3><p>就是当遇到<code>Is this OK[y/d/N]</code>提问时自动回答y</p>
+<p><a href="http://man.linuxde.net/yum" target="_blank" rel="noopener">yum速查</a></p>
+<h3 id="2-netstat"><a href="#2-netstat" class="headerlink" title="2. netstat"></a>2. netstat</h3><p>查看端口被哪个程序占用：<br>netstat -lptu</p>
+<h3 id="3-单端口多服务-——-Nginx"><a href="#3-单端口多服务-——-Nginx" class="headerlink" title="3. 单端口多服务 —— Nginx"></a>3. 单端口多服务 —— Nginx</h3><p>安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的<code>语句</code>，<code>块</code>，再从使用场景出发学习具体写法。</p>
+<p><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/" target="_blank" rel="noopener">How to Configure NGINX</a></p>
+<p>现在接触到的场景有几个，我们可以用一台服务器的一个端口（例如80端口）同时为多个域名提供不同服务。原理很简单，就是Nginx充当了“前台”的作用，对提交的不同请求进行“导流”。</p>
+<p>例如我一台服务器希望提供四个功能：API、论坛、官网、博客，每个功能都想通过80端口，但一个端口只能被一个程序占用，这个时候就能用上Nginx了。</p>
+<table>
+<thead>
+<tr>
+<th>Public Host &amp; Port</th>
+<th>Service Host &amp; Port</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cqu.andream.app:80</td>
+<td>localhost:4000</td>
+<td>Cqueue的API</td>
+</tr>
+<tr>
+<td>forum.andream.app:80</td>
+<td>localhost:4567</td>
+<td>NodeBB搭建的论坛</td>
+</tr>
+<tr>
+<td>note.andream.app:80</td>
+<td>localhost:4001</td>
+<td>Andream记事的官网</td>
+</tr>
+<tr>
+<td>blog.andream.app:80</td>
+<td>localhost:4002</td>
+<td>Hexo搭建的博客</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-定时任务-——-crontab"><a href="#4-定时任务-——-crontab" class="headerlink" title="4. 定时任务 —— crontab"></a>4. 定时任务 —— crontab</h3><p>最近写博客都是在PC上写完，同步到github上，现在想把github上的文章再同步到我的服务器上，然后通过<code>blog.andream.app</code>访问。思路就是每分钟执行一次<code>git pull</code>，于是用到了定时任务。（当然，也有人会说为什么不直接把域名跳转到github呢？我没试成功。）</p>
+<p>参考：<a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html" target="_blank" rel="noopener">每天一个linux命令（50）：crontab命令</a></p>
+<p>如果你还没读上面的博客，可以先想一想，如果让你自己设计crontab，你会怎么设计？</p>
+<p><code>crontab -c &quot;git pull&quot; -t 60000</code></p>
+<p>如果是我，我会向上面那样：指定要定时执行的命令，以及执行周期。但了解之后你会发现crontab并不这么直接，它的基本格式是这样的：</p>
+<p><code>crontab mycronfile</code></p>
+<p>所有的定时任务存在mycronfile中，像下面那样：</p>
+<p><code>* * * * * git pull</code></p>
+<p>前面五个分别指示定时执行的minutes、hours、days、weeks、months，最后一个是命令。</p>
+<p>这样有什么好处呢？一是对<code>定时</code>的表示能力更丰富了（具体见博客），二是系统本身就有许多定时任务，一开机就要开始运行，一定要存起来，才能真正实现完全自动化。</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/02/To everyone new to the CODING world like me/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          To everyone new to the CODING world like me
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/26/从做一个计算器出发学习CSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">从做一个计算器出发学习CSS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/AndreamApp" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+		<li><a href="#" onclick="var blur = document.getElementById('bg').style.filter; document.getElementById('bg').style.filter = (blur==='blur(0px)') ? 'blur(10px)' : 'blur(0px)'"><i class="icon" ></i></a></li>
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+	<div id="footer-info" class="inner">
+      <div>
+	    &copy; 2018 Andream & setup(<a href="http://hexo.io/" target="_blank">Hexo</a>,
+	    <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>), page_visit = <span id="busuanzi_value_page_pv"></span>;
+	  </div>
+	</div>
+</footer>
+
+    </div>
+  </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/AndreamApp" class="mobile-nav-link">Github</a>
+  
+  <a href="#" onclick="var blur = document.getElementById('bg').style.filter; document.getElementById('bg').style.filter = (blur==='blur(0px)') ? 'blur(10px)' : 'blur(0px)'" class="mobile-nav-link">Blur</a>
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
