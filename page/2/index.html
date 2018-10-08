@@ -3,19 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Vue基础 | Andream</title>
+  <title>Andream</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ViewModel 使用Vue实例联系起HTML元素(View)和data(Model)响应式 当data变化后会立即同步变化View组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用 模板语法12345678910&amp;#123;&amp;#123; rawHtml &amp;#125;&amp;#125;&amp;lt;span v-html=&amp;quot;r">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础">
-<meta property="og:url" content="http://andreamapp.com/2018/09/13/Vue基础/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Andream">
+<meta property="og:url" content="http://andreamapp.com/page/2/index.html">
 <meta property="og:site_name" content="Andream">
-<meta property="og:description" content="ViewModel 使用Vue实例联系起HTML元素(View)和data(Model)响应式 当data变化后会立即同步变化View组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用 模板语法12345678910&amp;#123;&amp;#123; rawHtml &amp;#125;&amp;#125;&amp;lt;span v-html=&amp;quot;r">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-19T10:14:21.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue基础">
-<meta name="twitter:description" content="ViewModel 使用Vue实例联系起HTML元素(View)和data(Model)响应式 当data变化后会立即同步变化View组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用 模板语法12345678910&amp;#123;&amp;#123; rawHtml &amp;#125;&amp;#125;&amp;lt;span v-html=&amp;quot;r">
+<meta name="twitter:title" content="Andream">
   
     <link rel="alternative" href="/atom.xml" title="Andream" type="application/atom+xml">
   
@@ -54,15 +50,17 @@
   <div id="container">
     <div id="wrap">
       <div class="outer">
-        <section id="main"><article id="post-Vue基础" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-Vue基础" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Vue基础
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/13/Vue基础/">Vue基础</a>
     </h1>
   
 
@@ -91,30 +89,110 @@
     </div>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2018/09/14/《UML精粹》读书笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          《UML精粹》读书笔记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/09/13/Vue入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Vue入门</div>
-    </a>
-  
-</nav>
+</article>
 
+
+
+  
+    <article id="post-Vue入门" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/13/Vue入门/">Vue入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/09/13/Vue入门/" class="article-date">
+  <time datetime="2018-09-12T16:00:00.000Z" itemprop="datePublished">2018-09-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
+</blockquote>
+<h2 id="Hello-Vue-——-声明式渲染"><a href="#Hello-Vue-——-声明式渲染" class="headerlink" title="Hello Vue —— 声明式渲染"></a>Hello Vue —— 声明式渲染</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    Hello Vue, My name is xxx.</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    Hello Vue, My name is &#123;&#123; name &#125;&#125;.</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/unpkg.com/</span>vue<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">    var obj = new Vue(&#123;</span></span><br><span class="line"><span class="string">        el: '#app',</span></span><br><span class="line"><span class="string">        data: &#123;</span></span><br><span class="line"><span class="string">            name: 'Biao'</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个代码很好懂，目的是用js动态填充<code>文档元素</code>里的模板。</p>
+<p>从面向对象的角度来理解Vue的工作原理，那么这段代码最关键的一个词就是：new。就好像一首诗的“诗眼”一样。</p>
+<p>通过new创建了一个Vue对象实例，而这个对象将<code>文档元素</code>和<code>数据</code>联系在了一起。注意，Vue并非是简单地“模板替换”，在console里输入obj.name=’Tony’，你会发现文档<code>响应式</code>的改变了，这意味着Vue对象<code>obj</code>维护着元素<code>#app</code>和其他Vue属性<code>data</code>之间的关系。</p>
+<p>再提一问：Vue为什么要这样维护？比用DOM维护有什么好处？答案是DOM将结点元素视为一个对象，而Vue将有结构的数据视为一个对象。用Vue修改name只需要obj.name=’Tony’即可，而用DOM要先document.getElementById(‘app’)再修改innerHTML。</p>
+<p>如果再深究一步：Vue怎样实现这样的维护？那所有的秘密都藏在<code>&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;</code>这一行里了，恐怕只有阅读了源码才能清楚。</p>
+<h2 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">var obj = new Vue(&#123;</span><br><span class="line">  el: '#app',</span><br><span class="line">  data: &#123;</span><br><span class="line">    seen: true,</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; text: '学习 JavaScript' &#125;,</span><br><span class="line">      &#123; text: '学习 Vue' &#125;,</span><br><span class="line">      &#123; text: '整个牛项目' &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="速查手册"><a href="#速查手册" class="headerlink" title="速查手册"></a>速查手册</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">v-if=&quot;seen&quot;</span><br><span class="line">v-for=&quot;todo in todos&quot;</span><br><span class="line">v-on:click=&quot;reverseMessage&quot;    // 事件绑定</span><br><span class="line">v-model=&quot;message&quot;   // 表单数据绑定</span><br><span class="line">var obj = new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        name: &apos;Biao&apos;,</span><br><span class="line">        seen: true,</span><br><span class="line">        todo: []</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        reverseMessage: function () &#123;</span><br><span class="line">            this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        
+    </div>
+  </div>
   
 </article>
 
 
+
+  
+    <article id="post-杂谈" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/10/杂谈/">杂谈</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/09/10/杂谈/" class="article-date">
+  <time datetime="2018-09-10T09:11:29.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开学一周了，国创的事情已经告一段落，以一个学生的身份来说，我的任务首先是把课程过了。这个学期有机器学习、Web开发、信息安全、图形学、UML、需求分析、大数据、多媒体、DirectX这十门课，每天两节课，周末空闲。如何安排这空闲的大半时间？</p>
+<p>如我前两年一般，把大部分时间用到课业学习已经不现实。即使我在这些课花很多时间也不一定就能学好——我并不都感兴趣，何况不能指望30个小时胡吹和稀稀零零的作业就能学好十门课。我必须有所选择，对于感兴趣的课程，就应当多下功夫，至于其他课程，按部就班通过就好。</p>
+<p>除了上课，还想做点实际的，这是我真正的兴趣所在。</p>
+<ol>
+<li>升级一下Cqueue，加一些类似分享和笔记的功能；</li>
+<li>升级一下Note，加一个云同步、指纹解锁；</li>
+<li>做一个手机端的Shell，用来做自己的桌面，类似Aris Launcher那样，最好还能支持一些脚本</li>
+</ol>
+<p>这些小玩意儿上不得台面，满足自己而已，但我乐意去做。</p>
+<p>昨天读了一篇AMS，平实的语言如此细腻又深入人心，对我很大安慰。昨晚睡得早，今天非常精神，正想改一改Cqueue，想到了解一下Mongoose，逛到@atian25的博客，又逛到Coolshell.cn，非常佩服膜拜，把博客在手机上用RSS订阅了，留着以后翻看。</p>
+<p>第一次写博客，跟写日记很不一样，要发出来就是为了分享一些想法或者经受指点，太个人的话和发牢骚的话就删删改改，写了半个多小时。文笔还要练呀。希望以后多分享一些技术的想法，希望学期结束不会对自己失望。</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </section>
         <aside id="sidebar">
   <nav class="menus">

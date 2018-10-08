@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Andream">
 <meta property="og:description" content="1. yum -y install中的-y是什么就是当遇到Is this OK[y/d/N]提问时自动回答y yum速查 2. netstat查看端口被哪个程序占用：netstat -lptu 3. 单端口多服务 —— Nginx安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。 How to Configure NGI">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-03T11:45:09.000Z">
+<meta property="og:updated_time" content="2018-10-03T11:49:43.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【零零碎碎】Linux命令之情景交融">
 <meta name="twitter:description" content="1. yum -y install中的-y是什么就是当遇到Is this OK[y/d/N]提问时自动回答y yum速查 2. netstat查看端口被哪个程序占用：netstat -lptu 3. 单端口多服务 —— Nginx安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。 How to Configure NGI">
@@ -125,6 +125,12 @@
 <p><code>* * * * * git pull</code></p>
 <p>前面五个分别指示定时执行的minutes、hours、days、weeks、months，最后一个是命令。</p>
 <p>这样有什么好处呢？一是对<code>定时</code>的表示能力更丰富了（具体见博客），二是系统本身就有许多定时任务，一开机就要开始运行，一定要存起来，才能真正实现完全自动化。</p>
+<p>相关文件：</p>
+<ul>
+<li><code>/etc/crontab</code>：系统级定时任务</li>
+<li><code>/var/spool/cron</code>：用户级定时任务目录</li>
+<li><code>/var/log/cron</code>：任务日志</li>
+</ul>
 
       
 
