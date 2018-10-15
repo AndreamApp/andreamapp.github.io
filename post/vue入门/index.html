@@ -7,28 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vue | Andream</title>
-    <meta property="og:title" content="Vue - Andream">
+    <title>Vue入门 | Andream</title>
+    <meta property="og:title" content="Vue入门 - Andream">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-09-13T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-09-13T00:00:00&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="Vue">
+    <meta name="description" content="Vue入门">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/tags/vue/">
+    <meta property="og:url" content="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+    <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.andream.app/tags/vue/index.xml" title="Andream" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -44,7 +48,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.andream.app/">首页</a>
+                    <a class="current" href="https://blog.andream.app/">首页</a>
                     
                 </nav>
             </div>
@@ -59,28 +63,20 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">vue</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年9月13日
-                                00:00
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Vue入门</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年9月13日
+                            00:00
+                        </date>
+                        
+                        
+                        <div class="post-content">
                             
-                            <div class="post-content">
-                                <blockquote>
+
+<blockquote>
 <p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
 </blockquote>
 
@@ -95,20 +91,101 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
-                                <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
-                            </div>
-                        </article>
+<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。</p>
+
+<pre><code class="language-js">&lt;html&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+    Hello Vue, My name is {{ name }}.
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            name: 'Biao'
+        }
+    })
+&lt;/script&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>这个代码很好懂，目的是用js动态填充<code>文档元素</code>里的{{name}}模板。</p>
+
+<p>从面向对象的角度来理解Vue的工作原理，那么这段代码最关键的一个词就是：new。就好像一首诗的“诗眼”一样。</p>
+
+<p>通过new创建了一个Vue对象实例，而这个对象将<code>文档元素</code>和<code>数据</code>联系在了一起。注意，Vue并非是简单地“模板替换”，在console里输入obj.name=&lsquo;Tony&rsquo;，你会发现文档<code>响应式</code>的改变了，这意味着Vue对象<code>obj</code>维护着元素<code>#app</code>和其他Vue属性<code>data</code>之间的关系。</p>
+
+<p>再提一问：Vue为什么要这样维护？比用DOM维护有什么好处？答案是DOM将结点元素视为一个对象，而Vue将有结构的数据视为一个对象。用Vue修改name只需要obj.name=&lsquo;Tony&rsquo;即可，而用DOM要先document.getElementById(&lsquo;app&rsquo;)再修改innerHTML。</p>
+
+<p>如果再深究一步：Vue怎样实现这样的维护？那所有的秘密都藏在<code>&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;</code>这一行里了，恐怕只有阅读了源码才能清楚。</p>
+
+<h2 id="条件与循环">条件与循环</h2>
+
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    &lt;p v-if=&quot;seen&quot;&gt;现在你看到我了&lt;/p&gt;
+    &lt;li v-for=&quot;todo in todos&quot;&gt;
+      {{ todo.text }}
+    &lt;/li&gt;
+&lt;/div&gt;
+var obj = new Vue({
+  el: '#app',
+  data: {
+    seen: true,
+    todos: [
+      { text: '学习 JavaScript' },
+      { text: '学习 Vue' },
+      { text: '整个牛项目' }
+    ]
+  }
+})
+</code></pre>
+
+<h2 id="速查手册">速查手册</h2>
+
+<pre><code>v-if=&quot;seen&quot;
+v-for=&quot;todo in todos&quot;
+v-on:click=&quot;reverseMessage&quot;    // 事件绑定
+v-model=&quot;message&quot;   // 表单数据绑定
+var obj = new Vue({
+    el: '#app',
+    data: {
+        name: 'Biao',
+        seen: true,
+        todo: []
+    },
+    methods: {
+        reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+})
+</code></pre>
+
+                        </div>
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="/tags/vue">Vue</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -206,9 +283,19 @@
 </footer>
 
 
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
 
 
 

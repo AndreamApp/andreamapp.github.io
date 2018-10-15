@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andream</title>
+    <link>https://blog.andream.app/</link>
+    <description>Recent content on Andream</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Oct 2018 20:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.andream.app/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Sublime画UML</title>
+      <link>https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/</link>
+      <pubDate>Tue, 09 Oct 2018 20:45:00 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/</guid>
+      <description>最近由于UML作业，又要画图了。本人非常讨厌用电脑画图，对齐都要对半天，再整几十个工具箱，看到就想砸电脑。于是去Github寻寻觅觅，找到了PlantUML —— 用文字描述UML，然后自动生成图片。再结合Sublime的插件，就能一键预览，这就是我要的。
+如下图，按下Alt+M预览图片，用Alt+Shift+1分屏
+首先默认你已经安装Java和Sublime，下面简单说下配置的过程：
+1. 安装sublime_diagram_plugin  由于该插件没有加入Package Control仓库中，需要手动下载安装
+ 在Sublime中点击Preferences -&amp;gt; Browse Packages进入插件界面
+git clone https://github.com/jvantuyl/sublime_diagram_plugin.git  随后Sublime会自动加载该插件。
+2. 安装Graphviz  Sublime插件要用Graphviz的dot.exe显示图片
+ 下载安装graphviz.org
+将bin目录加入环境变量PATH，新建变量GRAPHVIZ_DOT=安装目录\bin\dot.exe
+大功告成！现在打开Sublime输入PlantUML语句，按Alt+M就能得到UML图了！
+相关链接 plantuml.com sublime_diagram_plugin/issues/30
+还能怎么画uml 网页端绘制plant uml：planttext.com/
+使用 Sublime + PlantUML 高效地画图：jianshu.com
+Chrome插件PlantUML Viewer，实时绘制本地uml文本：chrome.google.com
+一些样例：real-world-plantuml.com/</description>
+    </item>
+    
+    <item>
+      <title>【零零碎碎】batch编程</title>
+      <link>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Wed, 03 Oct 2018 12:07:23 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</guid>
+      <description> 关于路径  Q: 如何引用相对目录/文件？
+ A: %~dp0表示当前batch文件所在的目录，以\结尾。
+示例 // 愚蠢的写法 forever start -c python C:\Users\Andream\Desktop\utils\dr.py // 正常的写法1 forever start -c python %~dp0dr.py // 正常的写法2 cd %~dp0 forever start -c python dr.py  // 愚蠢的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&amp;quot; // 正常的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;%~dp0source\_posts\temp.md&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>值得一度的文章</title>
+      <link>https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Wed, 03 Oct 2018 12:07:23 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/</guid>
+      <description>随着从学校走向工程，我们不断地在技术领域里扩展着足迹，也逐渐从熟悉走向陌生。从C语言到Go，从排序算法到工业算法，从SQL到数据库运维，从HTTP到TSL IPV6，从 CLI 到工业界广泛应用的 Web，从 Java Swing 到日趋成熟的移动应用，从Windows环境到Linux环境，从独立开发到协同版本控制，从手动构建部署到自动构建部署&amp;hellip;
+这个过程是漫长又迷惑的，当我们需要更可靠更专业的知识时，却发现不再有人来教我们，我们必须学会自学；当我们主动寻找一些教程时，却被一些搜索引擎误导，被五花八门的碎片文章充斥了头脑；当我们遇到问题时，去Stack Overflow暂时的解决了，却没有了解问题的原因，之后接二连三的依然出现问题，我们没有随着问题的逐渐解决变得明智，反而变得越发依赖。
+我们不甘在迷惑中迷路的，自要寻找出路。寻找出路是不能忘了来路，我们的一切问题都是从工程（或研究）中来的，不可一头扎进专业名词里，忘记学习的初衷是应用。“学而不思则罔，思而不学则殆”，我们的出路就是 —— 清醒地思、有效地学、扎实地用。
+凡遇到问题，多问几个为什么，去追求技术背后的原理，去分析方案背后的原因。深入理解了技术，这是我们分析和解决问题的灵感之源。这个过程当然是需要一定悟性的，也是痛苦的，但这种痛苦是面对问题的痛苦，而快乐的奖赏总在这种痛苦之后，而浮于表面总要受逃避问题的长期痛苦，再令你麻木。一个对技术有所追求的人是乐于清醒的。
+思考和学习不是抠头发，要有根据。官方文档通常是很好的上手点，通常包括Overview、Guide、Tutorial、Example，看完这些就应该对一项技术是用来干什么，解决什么问题，适合什么场景，基础的用法有初步的了解，你就能决定是否要继续学习。深入地学习就需要寻找好的教材，好的文章。如果没有，就去社区和别人讨论，请教大牛，或者通过阅读源码分析，当有了自己的理解之后也能写成文章供后人参考。但切忌为了表现自己的“才识”而写文章，如果已经有更好的文章，不妨引用，莫要为虚荣而做重复的工作，把精力用到那些未开采的领域，创造性的领域。
+ To be the first, the best, or the different.
+ 推荐一些高质量的技术文章，主旨是深入理解一些成熟的技术的原理，进而熟练的使用。包括但不限于以下主题：
+systemctl 命令完全指南</description>
+    </item>
+    
+    <item>
+      <title>To everyone new to the CODING world like me</title>
+      <link>https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/</link>
+      <pubDate>Tue, 02 Oct 2018 11:59:35 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/</guid>
+      <description>The first step is always difficult.
+1. where to get started with a new technolygy?  see guide doc see tutorial video follow a good textbook read source code of examples, try to catch the key point and basic usage give a practice  No one can be always right, the key is to know whether you are right or wrong.
+2. how to evaluate your thought is right or wrong?</description>
+    </item>
+    
+    <item>
+      <title>【零零碎碎】Linux命令之情景交融</title>
+      <link>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</link>
+      <pubDate>Mon, 01 Oct 2018 18:47:47 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</guid>
+      <description>1. yum -y install中的-y是什么 就是当遇到Is this OK[y/d/N]提问时自动回答y
+yum速查
+2. netstat 查看端口被哪个程序占用： netstat -lptu
+3. 单端口多服务 —— Nginx 安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的语句，块，再从使用场景出发学习具体写法。
+How to Configure NGINX
+现在接触到的场景有几个，我们可以用一台服务器的一个端口（例如80端口）同时为多个域名提供不同服务。原理很简单，就是Nginx充当了“前台”的作用，对提交的不同请求进行“导流”。
+例如我一台服务器希望提供四个功能：API、论坛、官网、博客，每个功能都想通过80端口，但一个端口只能被一个程序占用，这个时候就能用上Nginx了。
+   Public Host &amp;amp; Port Service Host &amp;amp; Port Note     cqu.andream.app:80 localhost:4000 Cqueue的API   forum.andream.app:80 localhost:4567 NodeBB搭建的论坛   note.andream.app:80 localhost:4001 Andream记事的官网   blog.andream.app:80 localhost:4002 Hexo搭建的博客    4. 定时任务 —— crontab 最近写博客都是在PC上写完，同步到github上，现在想把github上的文章再同步到我的服务器上，然后通过blog.andream.app访问。思路就是每分钟执行一次git pull，于是用到了定时任务。（当然，也有人会说为什么不直接把域名跳转到github呢？我没试成功。）
+参考：每天一个linux命令（50）：crontab命令
+如果你还没读上面的博客，可以先想一想，如果让你自己设计crontab，你会怎么设计？</description>
+    </item>
+    
+    <item>
+      <title>从做一个计算器出发学习CSS</title>
+      <link>https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</link>
+      <pubDate>Wed, 26 Sep 2018 19:37:09 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</guid>
+      <description>认识是从实践中来，到实践中去，在实践中接受检验。
+ 计算器是网页初学者经常做的了，我的这个例子用Vue来控制面板数据和计算操作，用table和v-for做界面，用CSS控制布局和样式。
+做计算器的过程中更加了解了如何正确地使用CSS，因此记录一下，希望能多一些这种经验，总结出自己的学习模式。
+Vue中使用动态Class &amp;lt;table id=&amp;quot;calc_table&amp;quot;&amp;gt; &amp;lt;tr v-for=&amp;quot;row in panel&amp;quot; class=&amp;quot;calc_row&amp;quot;&amp;gt; &amp;lt;template v-for=&amp;quot;btn in row&amp;quot; &amp;gt; &amp;lt;td :class=&amp;quot;[ { calc_btn: true }, { calc_btn_equal: btn===&#39;=&#39; }, { calc_btn_number: btn!==&#39;=&#39; }, ]&amp;quot; @click=&amp;quot;input(btn)&amp;quot;&amp;gt; {{ btn }} &amp;lt;/td&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/tr&amp;gt; &amp;lt;/table&amp;gt;  使用:class可以给元素指定一个ClassObject或ClassObject的数组（以下统称ClassObject），通过这个ClassObject可以“算”出该元素有哪些class。
+为什么要有动态class呢？因为静态class实在太不灵活了。数字按钮要加一个class，=按钮要加另一个，log、sin这些按钮又要加另一个。不仅写起来冗长，而且不能用v-for这种统一的方式来实现了。
+换句话说，ClassObject是元素的状态和它的class之间的关系的一个抽象，形式地说，ClassObject是从元素状态到class的一个映射。
+class = ClassObject(state), class ⊂ CSS.allClasses, state ⊂ Vue.data  而Vue完成的工作就是维护所有的状态（也就是data），当状态变化时重新计算class并同步到相应元素上。
+参考：https://cn.vuejs.org/v2/guide/class-and-style.html
+通过Chrome的检查功能学习别人家的CSS  “我前天亲眼见你偷了谷家的代码，吊着打。” “程序员的事，能算偷吗？”
+ 直接Google计算器出来的在线计算器样式就蛮好看的，按钮有渐变效果，这是我不会的。比起一章一章的啃文档，看一个感兴趣的例子源码学起来更快。于是乎右键 -&amp;gt; 检查。
+在右边可以直接看到对应的CSS样式，filter中可以选择状态进一步筛选。
+参考：Get Started With Viewing And Changing CSS</description>
+    </item>
+    
+    <item>
+      <title>解决npm install -g not found</title>
+      <link>https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</link>
+      <pubDate>Sat, 22 Sep 2018 14:29:36 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</guid>
+      <description> 场景 # npm install hexo -g  使用-g命令安装npm全局包，之后就可以在命令行中全局使用。
+错误 安装成功后提示下面的错误：
+# hexo -bash: hexo: command not found  分析 发现hexo并不在path目录下：
+# which hexo /usr/bin/which: no hexo in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)  以hexo为例分析npm install -g的安装过程：
+ npm将hexo安装在/usr/local/lib/node_modules/hexo目录下 将hexo可执行文件/usr/local/lib/node_modules/hexo/bin/hexo链接到/usr/local/bin/hexo  那/usr/local/bin在path中却找不到hexo呢？
+因为npm实际上是安装在prefix这个目录下，而不是/usr/local，如果prefix设置错误就找不到了。
+验证 npm config get prefix /data/app/janny-hexo  echo $PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin/lib  解决  修改prefix【建议】  npm config set prefix /usr/local npm install hexo -g   或修改path  export PATH=$PATH:/data/app/janny-hexo/bin npm install hexo -g  </description>
+    </item>
+    
+    <item>
+      <title>Codeforces 1051</title>
+      <link>https://blog.andream.app/post/codeforces-1051/</link>
+      <pubDate>Fri, 21 Sep 2018 00:35:24 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/codeforces-1051/</guid>
+      <description>A 分类讨论
+#include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int T; string s; void rps(int t1, int t2){ t1--; t2--; for(int i = 0; i &amp;lt; s.size(); i++){ char c = s[i]; if(0 == t1 &amp;amp;&amp;amp; c &amp;gt;= &#39;a&#39; &amp;amp;&amp;amp; c &amp;lt;= &#39;z&#39;){ s[i] = 1 == t2 ? &#39;A&#39; : 2 == t2 ? &#39;0&#39; : s[i]; } else if(1 == t1 &amp;amp;&amp;amp; c &amp;gt;= &#39;A&#39; &amp;amp;&amp;amp; c &amp;lt;= &#39;Z&#39;){ s[i] = 0 == t2 ?</description>
+    </item>
+    
+    <item>
+      <title>《UML精粹》读书笔记</title>
+      <link>https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 14 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description> 引言 UML使用方式  UML在软件开发中作用的实质是人们不同的使用方式。
+ 作者在引言第一节就抛出了本书关键的一个问题：你想使用好UML吗？先问问自己你为什么要用UML，你期望用UML做什么？
+UML三种使用方法： 1. 草图 UML as sketch 2. 蓝图 UML as blueprint 3. 编程语言 UML as programing language
+草图的实质是选择，用于确定一个方案值不值得去做，而不关心具体怎么做。蓝图的实质是描述，并且尽可能精确细节的描述。草图是探究性的，蓝图是定义性的。
+用作编程语言指的是将UML直接编译为可执行的程序代码，这自然要求比蓝图更精确的描述能力。
+另一个看待UML的角度是：用UML对什么建模？ 1. 软件视角：对软件建模，UML成分直接映射为软件成分 2. 概念视角：对概念建模，UML成分只是对概念的表述，至于软件怎么实现，另当别论
+UML到底用作什么，UML和设计的关系为何？引起很多争议。作者随后表明自己立场，也是我赞同的立场： UML用作草图，可用于软件视角和概念视角。不赞同用于蓝图和编程语言。
+ 图示法的魅力在于直观，而不是形式定义。
+ 你的UML画的不符合标准！？ UML具有指定性规则还是描述性规则？换句话说，UML标准是按照某个机构某个文档说的算，还是使用者说的算？这个问题乍一看有点傻，其实是因为UML标准繁杂不统一导致的。
+ 如果你是一名草图绘制人员或一名蓝图绘制人员，不必更多强调有合法的UML，更为重要的是，要对你的系统有一个好的设计。
+ 把精力更多的用在如何设计一个好的系统，而非拘泥于标准。
+如果有非UML图更适合，feel free to use it.
+何处着手使用UML 从类图和顺序图着手了解UML，再根据需要去了解更高级的UML
+ 没有人能了解UML的全部，你应该寻求为你和你的同事们的工作的UML子集。
+ 更多资料 UML和模式应用 UML参考手册 重构 设计模式
+过程 作者推崇的过程：
+迭代风格、阶段提交、时间框定、回归测试、重构、连续集成、响应变更、迭代回顾
+ 敏捷过程 极限编程（XP） Scrum Crystal DSDM Rational统一过程（RUP）  类图 顺序图 部署图 用例图 状态机图 活动图 </description>
+    </item>
+    
+    <item>
+      <title>Vue入门</title>
+      <link>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</guid>
+      <description>有基础的HTML+CSS+JS知识就阔以搞起了
+ Hello Vue —— 声明式渲染 &amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is xxx. &amp;lt;/div&amp;gt; &amp;lt;/html&amp;gt;  这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。
+&amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is {{ name }}. &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var obj = new Vue({ el: &#39;#app&#39;, data: { name: &#39;Biao&#39; } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt;  这个代码很好懂，目的是用js动态填充文档元素里的{{name}}模板。
+从面向对象的角度来理解Vue的工作原理，那么这段代码最关键的一个词就是：new。就好像一首诗的“诗眼”一样。
+通过new创建了一个Vue对象实例，而这个对象将文档元素和数据联系在了一起。注意，Vue并非是简单地“模板替换”，在console里输入obj.name=&amp;lsquo;Tony&amp;rsquo;，你会发现文档响应式的改变了，这意味着Vue对象obj维护着元素#app和其他Vue属性data之间的关系。
+再提一问：Vue为什么要这样维护？比用DOM维护有什么好处？答案是DOM将结点元素视为一个对象，而Vue将有结构的数据视为一个对象。用Vue修改name只需要obj.name=&amp;lsquo;Tony&amp;rsquo;即可，而用DOM要先document.getElementById(&amp;lsquo;app&amp;rsquo;)再修改innerHTML。
+如果再深究一步：Vue怎样实现这样的维护？那所有的秘密都藏在&amp;lt;script src=&amp;quot;https://unpkg.com/vue&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;这一行里了，恐怕只有阅读了源码才能清楚。
+条件与循环 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;seen&amp;quot;&amp;gt;现在你看到我了&amp;lt;/p&amp;gt; &amp;lt;li v-for=&amp;quot;todo in todos&amp;quot;&amp;gt; {{ todo.text }} &amp;lt;/li&amp;gt; &amp;lt;/div&amp;gt; var obj = new Vue({ el: &#39;#app&#39;, data: { seen: true, todos: [ { text: &#39;学习 JavaScript&#39; }, { text: &#39;学习 Vue&#39; }, { text: &#39;整个牛项目&#39; } ] } })  速查手册 v-if=&amp;quot;seen&amp;quot; v-for=&amp;quot;todo in todos&amp;quot; v-on:click=&amp;quot;reverseMessage&amp;quot; // 事件绑定 v-model=&amp;quot;message&amp;quot; // 表单数据绑定 var obj = new Vue({ el: &#39;#app&#39;, data: { name: &#39;Biao&#39;, seen: true, todo: [] }, methods: { reverseMessage: function () { this.</description>
+    </item>
+    
+    <item>
+      <title>Vue基础</title>
+      <link>https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/</guid>
+      <description>ViewModel 使用Vue实例联系起HTML元素(View)和data(Model) 响应式 当data变化后会立即同步变化View 组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用
+模板语法 {{ rawHtml }} &amp;lt;span v-html=&amp;quot;rawHtml&amp;quot;&amp;gt;&amp;lt;/span&amp;gt; v-bind:id=&amp;quot;dynamicId&amp;quot; v-bind:disabled=&amp;quot;isButtonDisabled&amp;quot; v-bind:id=&amp;quot;&#39;list-&#39; + id&amp;quot; v-if=&amp;quot;seen&amp;quot; v-on:click=&amp;quot;doSomething&amp;quot; v-bind:href=&amp;quot;url&amp;quot; 缩写为 :href=&amp;quot;url&amp;quot; v-on:click=&amp;quot;doSomething&amp;quot; 缩写为 @click=&amp;quot;doSomething&amp;quot;  计算属性 // {{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }} {{ reversedMessage }} var vm = new Vue({ el: &#39;#example&#39;, data: { message: &#39;Hello&#39; }, computed: { // 计算属性的 getter reversedMessage: function () { // `this` 指向 vm 实例 return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } })  计算属性和函数区别：计算属性是基于它们的依赖进行缓存的。只在相关依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</description>
+    </item>
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Mon, 10 Sep 2018 17:11:29 +0000</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</guid>
+      <description>开学一周了，国创的事情已经告一段落，以一个学生的身份来说，我的任务首先是把课程过了。这个学期有机器学习、Web开发、信息安全、图形学、UML、需求分析、大数据、多媒体、DirectX这十门课，每天两节课，周末空闲。如何安排这空闲的大半时间？
+如我前两年一般，把大部分时间用到课业学习已经不现实。即使我在这些课花很多时间也不一定就能学好——我并不都感兴趣，何况不能指望30个小时胡吹和稀稀零零的作业就能学好十门课。我必须有所选择，对于感兴趣的课程，就应当多下功夫，至于其他课程，按部就班通过就好。
+除了上课，还想做点实际的，这是我真正的兴趣所在。 1. 升级一下Cqueue，加一些类似分享和笔记的功能； 2. 升级一下Note，加一个云同步、指纹解锁； 3. 做一个手机端的Shell，用来做自己的桌面，类似Aris Launcher那样，最好还能支持一些脚本
+这些小玩意儿上不得台面，满足自己而已，但我乐意去做。
+昨天读了一篇AMS，平实的语言如此细腻又深入人心，对我很大安慰。昨晚睡得早，今天非常精神，正想改一改Cqueue，想到了解一下Mongoose，逛到@atian25的博客，又逛到Coolshell.cn，非常佩服膜拜，把博客在手机上用RSS订阅了，留着以后翻看。
+第一次写博客，跟写日记很不一样，要发出来就是为了分享一些想法或者经受指点，太个人的话和发牢骚的话就删删改改，写了半个多小时。文笔还要练呀。希望以后多分享一些技术的想法，希望学期结束不会对自己失望。</description>
+    </item>
+    
+  </channel>
+</rss>

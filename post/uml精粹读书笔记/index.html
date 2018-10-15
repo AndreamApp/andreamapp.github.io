@@ -7,28 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vue | Andream</title>
-    <meta property="og:title" content="Vue - Andream">
+    <title>《UML精粹》读书笔记 | Andream</title>
+    <meta property="og:title" content="《UML精粹》读书笔记 - Andream">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-09-14T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-09-14T00:00:00&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="Vue">
+    <meta name="description" content="《UML精粹》读书笔记">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/tags/vue/">
+    <meta property="og:url" content="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+    <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.andream.app/tags/vue/index.xml" title="Andream" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -44,7 +48,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.andream.app/">首页</a>
+                    <a class="current" href="https://blog.andream.app/">首页</a>
                     
                 </nav>
             </div>
@@ -59,56 +63,121 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">vue</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年9月13日
-                                00:00
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">《UML精粹》读书笔记</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年9月14日
+                            00:00
+                        </date>
+                        
+                        
+                        <div class="post-content">
                             
-                            <div class="post-content">
-                                <blockquote>
-<p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
+
+<h2 id="引言">引言</h2>
+
+<h3 id="uml使用方式">UML使用方式</h3>
+
+<blockquote>
+<p>UML在软件开发中作用的实质是人们不同的使用方式。</p>
 </blockquote>
 
-<h2 id="hello-vue-声明式渲染">Hello Vue —— 声明式渲染</h2>
+<p>作者在引言第一节就抛出了本书关键的一个问题：你想使用好UML吗？先问问自己你为什么要用UML，你期望用UML做什么？</p>
 
-<pre><code class="language-js">&lt;html&gt;
+<p>UML三种使用方法：
+1. 草图 UML as sketch
+2. 蓝图 UML as blueprint
+3. 编程语言 UML as programing language</p>
 
-&lt;div id=&quot;app&quot;&gt;
-    Hello Vue, My name is xxx.
-&lt;/div&gt;
+<p>草图的实质是选择，用于确定一个方案值不值得去做，而不关心具体怎么做。蓝图的实质是描述，并且尽可能精确细节的描述。草图是探究性的，蓝图是定义性的。</p>
 
-&lt;/html&gt;
-</code></pre>
+<p>用作编程语言指的是将UML直接编译为可执行的程序代码，这自然要求比蓝图更精确的描述能力。</p>
 
-<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
-                                <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
-                            </div>
-                        </article>
+<p>另一个看待UML的角度是：用UML对什么建模？
+1. 软件视角：对软件建模，UML成分直接映射为软件成分
+2. 概念视角：对概念建模，UML成分只是对概念的表述，至于软件怎么实现，另当别论</p>
+
+<p>UML到底用作什么，UML和设计的关系为何？引起很多争议。作者随后表明自己立场，也是我赞同的立场：
+<strong>UML用作草图，可用于软件视角和概念视角。不赞同用于蓝图和编程语言。</strong></p>
+
+<blockquote>
+<p>图示法的魅力在于直观，而不是形式定义。</p>
+</blockquote>
+
+<h3 id="你的uml画的不符合标准">你的UML画的不符合标准！？</h3>
+
+<p>UML具有指定性规则还是描述性规则？换句话说，UML标准是按照某个机构某个文档说的算，还是使用者说的算？这个问题乍一看有点傻，其实是因为UML标准繁杂不统一导致的。</p>
+
+<blockquote>
+<p>如果你是一名草图绘制人员或一名蓝图绘制人员，不必更多强调有合法的UML，更为重要的是，要对你的系统有一个好的设计。</p>
+</blockquote>
+
+<p><strong>把精力更多的用在如何设计一个好的系统，而非拘泥于标准。</strong></p>
+
+<p><strong>如果有非UML图更适合，feel free to use it.</strong></p>
+
+<h2 id="何处着手使用uml">何处着手使用UML</h2>
+
+<p><strong>从类图和顺序图着手了解UML，再根据需要去了解更高级的UML</strong></p>
+
+<blockquote>
+<p>没有人能了解UML的全部，你应该寻求为你和你的同事们的工作的UML子集。</p>
+</blockquote>
+
+<h3 id="更多资料">更多资料</h3>
+
+<p><a href="https://book.douban.com/subject/1792387/">UML和模式应用</a>
+<a href="https://book.douban.com/subject/1435956/">UML参考手册</a>
+<a href="https://book.douban.com/subject/1229923/">重构</a>
+<a href="https://book.douban.com/subject/1052241/">设计模式</a></p>
+
+<h2 id="过程">过程</h2>
+
+<p>作者推崇的过程：</p>
+
+<p>迭代风格、阶段提交、时间框定、回归测试、重构、连续集成、响应变更、迭代回顾</p>
+
+<ul>
+<li>敏捷过程</li>
+<li>极限编程（XP）</li>
+<li>Scrum</li>
+<li>Crystal</li>
+<li>DSDM</li>
+<li>Rational统一过程（RUP）</li>
+</ul>
+
+<h2 id="类图">类图</h2>
+
+<h2 id="顺序图">顺序图</h2>
+
+<h2 id="部署图">部署图</h2>
+
+<h2 id="用例图">用例图</h2>
+
+<h2 id="状态机图">状态机图</h2>
+
+<h2 id="活动图">活动图</h2>
+
+                        </div>
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -206,9 +275,19 @@
 </footer>
 
 
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
 
 
 

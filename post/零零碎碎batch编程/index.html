@@ -7,28 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vue | Andream</title>
-    <meta property="og:title" content="Vue - Andream">
+    <title>【零零碎碎】batch编程 | Andream</title>
+    <meta property="og:title" content="【零零碎碎】batch编程 - Andream">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-10-03T12:07:23&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-10-03T12:07:23&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="Vue">
+    <meta name="description" content="【零零碎碎】batch编程">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/tags/vue/">
+    <meta property="og:url" content="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+    <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.andream.app/tags/vue/index.xml" title="Andream" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -44,7 +48,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.andream.app/">首页</a>
+                    <a class="current" href="https://blog.andream.app/">首页</a>
                     
                 </nav>
             </div>
@@ -59,56 +63,62 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">vue</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年9月13日
-                                00:00
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">【零零碎碎】batch编程</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年10月3日
+                            12:07
+                        </date>
+                        
+                        
+                        <div class="post-content">
                             
-                            <div class="post-content">
-                                <blockquote>
-<p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
+
+<h2 id="关于路径">关于路径</h2>
+
+<blockquote>
+<p>Q: 如何引用相对目录/文件？</p>
 </blockquote>
 
-<h2 id="hello-vue-声明式渲染">Hello Vue —— 声明式渲染</h2>
+<p>A: <code>%~dp0</code>表示当前batch文件所在的目录，以\结尾。</p>
 
-<pre><code class="language-js">&lt;html&gt;
+<h3 id="示例">示例</h3>
 
-&lt;div id=&quot;app&quot;&gt;
-    Hello Vue, My name is xxx.
-&lt;/div&gt;
-
-&lt;/html&gt;
+<pre><code class="language-shell">// 愚蠢的写法
+forever start -c python C:\Users\Andream\Desktop\utils\dr.py
+// 正常的写法1
+forever start -c python %~dp0dr.py
+// 正常的写法2
+cd %~dp0
+forever start -c python dr.py
 </code></pre>
 
-<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
-                                <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
-                            </div>
-                        </article>
+<pre><code class="language-shell">// 愚蠢的写法
+hexo new temp &amp;&amp; sub.lnk &quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&quot;
+// 正常的写法
+hexo new temp &amp;&amp; sub.lnk &quot;%~dp0source\_posts\temp.md&quot;
+</code></pre>
+
+                        </div>
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -206,9 +216,19 @@
 </footer>
 
 
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
 
 
 

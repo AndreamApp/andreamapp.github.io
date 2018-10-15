@@ -1,686 +1,480 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Andream</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Andream">
-<meta property="og:url" content="http://andreamapp.com/index.html">
-<meta property="og:site_name" content="Andream">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andream">
-  
-    <link rel="alternative" href="/atom.xml" title="Andream" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  
 
-  <style>
-	/* width */
-	::-webkit-scrollbar {
-		width: 8px;
-	}
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	/* Track */
-	::-webkit-scrollbar-track {
-		background: #0005; 
-	}
-	 
-	/* Handle */
-	::-webkit-scrollbar-thumb {
-		background: #ddd; 
-	}
+    <title>Andream | </title>
+    <meta property="og:title" content="Andream | ">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:url" content="https://blog.andream.app/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-	/* Handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-		background: #f0f0f0; 
-	}
-  </style>
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.andream.app/index.xml" title="Andream" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    
 </head>
+
+
 <body>
-  <div id="bg" class="bg"></div>
-  <div id="shade" class="shade"></div>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-用Sublime画UML" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/09/用Sublime画UML/">用Sublime画UML</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/10/09/用Sublime画UML/" class="article-date">
-  <time datetime="2018-10-09T12:45:00.000Z" itemprop="datePublished">2018-10-09</time>
-</a>
-      
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="https://blog.andream.app/">
+                            Andream
+                        </a>
+                    </h1>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.andream.app/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近由于UML作业，又要画图了。本人非常讨厌用电脑画图，对齐都要对半天，再整几十个工具箱，看到就想砸电脑。于是去Github寻寻觅觅，找到了<a href="https://github.com/plantuml/plantuml" target="_blank" rel="noopener">PlantUML</a> —— 用文字描述UML，然后自动生成图片。再结合Sublime的<a href="https://github.com/jvantuyl/sublime_diagram_plugin" target="_blank" rel="noopener">插件</a>，就能一键预览，这就是我要的。</p>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/">用Sublime画UML</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月9日
+                                20:45
+                            </date>
+                            
+                            <div class="post-content">
+                                <p>最近由于UML作业，又要画图了。本人非常讨厌用电脑画图，对齐都要对半天，再整几十个工具箱，看到就想砸电脑。于是去Github寻寻觅觅，找到了<a href="https://github.com/plantuml/plantuml">PlantUML</a> —— 用文字描述UML，然后自动生成图片。再结合Sublime的<a href="https://github.com/jvantuyl/sublime_diagram_plugin">插件</a>，就能一键预览，这就是我要的。</p>
+
 <p>如下图，按下<code>Alt+M</code>预览图片，用<code>Alt+Shift+1</code>分屏</p>
-<p><img src="../img/uml_with_sublime_example.png" alt=""></p>
-<p>首先默认你已经安装Java和Sublime，下面简单说下配置的过程：</p>
-<h3 id="1-安装sublime-diagram-plugin"><a href="#1-安装sublime-diagram-plugin" class="headerlink" title="1. 安装sublime_diagram_plugin"></a>1. 安装sublime_diagram_plugin</h3><blockquote>
-<p>由于该插件没有加入Package Control仓库中，需要手动下载安装</p>
-</blockquote>
-<p>在Sublime中点击<code>Preferences -&gt; Browse Packages</code>进入插件界面</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/jvantuyl/sublime_diagram_plugin.git</span><br></pre></td></tr></table></figure>
-<p>随后Sublime会自动加载该插件。</p>
-<h3 id="2-安装Graphviz"><a href="#2-安装Graphviz" class="headerlink" title="2. 安装Graphviz"></a>2. 安装Graphviz</h3><blockquote>
-<p>Sublime插件要用Graphviz的dot.exe显示图片</p>
-</blockquote>
-<p>下载安装<a href="https://www.graphviz.org/" target="_blank" rel="noopener">graphviz.org</a></p>
-<p>将bin目录加入环境变量PATH，新建变量<code>GRAPHVIZ_DOT=安装目录\bin\dot.exe</code></p>
-<p>大功告成！现在打开Sublime输入PlantUML语句，按<code>Alt+M</code>就能得到UML图了！</p>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="http://plantuml.com/" target="_blank" rel="noopener">plantuml.com</a><br><a href="https://github.com/jvantuyl/sublime_diagram_plugin/issues/30" target="_blank" rel="noopener">sublime_diagram_plugin/issues/30</a></p>
-<h3 id="还能怎么画uml"><a href="#还能怎么画uml" class="headerlink" title="还能怎么画uml"></a>还能怎么画uml</h3><p>网页端绘制plant uml：<a href="https://www.planttext.com/" target="_blank" rel="noopener">planttext.com/</a></p>
-<p>使用 Sublime + PlantUML 高效地画图：<a href="https://www.jianshu.com/p/e92a52770832" target="_blank" rel="noopener">jianshu.com</a></p>
-<p>Chrome插件PlantUML Viewer，实时绘制本地uml文本：<a href="https://chrome.google.com/webstore/detail/plantuml-viewer/legbfeljfbjgfifnkmpoajgpgejojooj/related?hl=zh-CN" target="_blank" rel="noopener">chrome.google.com</a></p>
-<p>一些样例：<a href="https://real-world-plantuml.com/" target="_blank" rel="noopener">real-world-plantuml.com/</a></p>
 
-      
+<p><img src="../img/uml_with_sublime_example.png" alt="" /></p>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<p>首先默认你已经安装Java …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/">【零零碎碎】batch编程</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月3日
+                                12:07
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="关于路径">关于路径</h2>
 
-
-
-  
-    <article id="post-【零零碎碎】batch编程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/03/【零零碎碎】batch编程/">【零零碎碎】batch编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/10/03/【零零碎碎】batch编程/" class="article-date">
-  <time datetime="2018-10-03T04:07:23.000Z" itemprop="datePublished">2018-10-03</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于路径"><a href="#关于路径" class="headerlink" title="关于路径"></a>关于路径</h2><blockquote>
+<blockquote>
 <p>Q: 如何引用相对目录/文件？</p>
 </blockquote>
+
 <p>A: <code>%~dp0</code>表示当前batch文件所在的目录，以\结尾。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 愚蠢的写法</span><br><span class="line">forever start -c python C:\Users\Andream\Desktop\utils\dr.py</span><br><span class="line">// 正常的写法1</span><br><span class="line">forever start -c python %~dp0dr.py</span><br><span class="line">// 正常的写法2</span><br><span class="line">cd %~dp0</span><br><span class="line">forever start -c python dr.py</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 愚蠢的写法</span><br><span class="line">hexo new temp &amp;&amp; sub.lnk "C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md"</span><br><span class="line">// 正常的写法</span><br><span class="line">hexo new temp &amp;&amp; sub.lnk "%~dp0source\_posts\temp.md"</span><br></pre></td></tr></table></figure>
 
-      
+<h3 id="示例">示例</h3>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<pre><code class="language-shell">// 愚蠢的写法
+forever start -c python C:\Users\Andream\Desktop\utils\dr.py
+// 正常的写法1
+forever start -c python %~dp0dr.py
+// 正 …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/">值得一度的文章</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月3日
+                                12:07
+                            </date>
+                            
+                            <div class="post-content">
+                                <p>随着从学校走向工程，我们不断地在技术领域里扩展着足迹，也逐渐从熟悉走向陌生。从C语言到Go，从排序算法到工业算法，从SQL到数据库运维，从HTTP到TSL IPV6，从 CLI 到工业界广泛应用的 Web，从 Java Swing 到日趋成熟的移动应用，从Windows环境到Linux环境，从独立开发到协同版本控制，从手动构建部署到自动构建部 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/">To everyone new to the CODING world like me</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月2日
+                                11:59
+                            </date>
+                            
+                            <div class="post-content">
+                                <p>The first step is always difficult.</p>
 
+<h2 id="1-where-to-get-started-with-a-new-technolygy">1. where to get started with a new technolygy?</h2>
 
-
-  
-    <article id="post-To everyone new to the CODING world like me" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/To everyone new to the CODING world like me/">To everyone new to the CODING world like me</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/10/02/To everyone new to the CODING world like me/" class="article-date">
-  <time datetime="2018-10-02T03:59:35.000Z" itemprop="datePublished">2018-10-02</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The first step is always difficult.</p>
-<h2 id="1-where-to-get-started-with-a-new-technolygy"><a href="#1-where-to-get-started-with-a-new-technolygy" class="headerlink" title="1. where to get started with a new technolygy?"></a>1. where to get started with a new technolygy?</h2><ul>
+<ul>
 <li>see guide doc</li>
 <li>see tutorial video</li>
 <li>follow a good textbook</li>
-<li>read source code of examples, try to catch the key point and basic usage</li>
-<li>give a <em>practice</em></li>
-</ul>
-<p>No one can be always right, the key is to know whether you are right or wrong.</p>
-<h2 id="2-how-to-evaluate-your-thought-is-right-or-wrong"><a href="#2-how-to-evaluate-your-thought-is-right-or-wrong" class="headerlink" title="2. how to evaluate your thought is right or wrong?"></a>2. how to evaluate your thought is right or wrong?</h2><ul>
-<li>can you see the output? <em>try</em> your thought and see how output change, and check whether it meet your prediction or not.</li>
-</ul>
-<p>when your thought got wrong, you may get confused by something.</p>
-<h2 id="3-how-to-clarify-your-confusion"><a href="#3-how-to-clarify-your-confusion" class="headerlink" title="3. how to clarify your confusion?"></a>3. how to clarify your confusion?</h2><ul>
-<li><em>search</em> by key words in your situation, because probably somebody has gone through the same and leave a solution.</li>
-<li>check fully <em>document</em>, and clarify the confusing concepts.</li>
-</ul>
+<li>read source code of examples, try to …</li></ul>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/">【零零碎碎】Linux命令之情景交融</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年10月1日
+                                18:47
+                            </date>
+                            
+                            <div class="post-content">
+                                <h3 id="1-yum-y-install中的-y是什么">1. yum -y install中的-y是什么</h3>
 
-      
+<p>就是当遇到<code>Is this OK[y/d/N]</code>提问时自动回答y</p>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<p><a href="http://man.linuxde.net/yum">yum速查</a></p>
 
+<h3 id="2-netstat">2. netstat</h3>
 
+<p>查看端口被哪个程序占用：
+netstat -lptu</p>
 
-  
-    <article id="post-【零零碎碎】Linux命令之情景交融" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/01/【零零碎碎】Linux命令之情景交融/">【零零碎碎】Linux命令之情景交融</a>
-    </h1>
-  
+<h3 id="3-单端口多服务-nginx">3. 单端口多服务 —— Nginx</h3>
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/10/01/【零零碎碎】Linux命令之情景交融/" class="article-date">
-  <time datetime="2018-10-01T10:47:47.000Z" itemprop="datePublished">2018-10-01</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-yum-y-install中的-y是什么"><a href="#1-yum-y-install中的-y是什么" class="headerlink" title="1. yum -y install中的-y是什么"></a>1. yum -y install中的-y是什么</h3><p>就是当遇到<code>Is this OK[y/d/N]</code>提问时自动回答y</p>
-<p><a href="http://man.linuxde.net/yum" target="_blank" rel="noopener">yum速查</a></p>
-<h3 id="2-netstat"><a href="#2-netstat" class="headerlink" title="2. netstat"></a>2. netstat</h3><p>查看端口被哪个程序占用：<br>netstat -lptu</p>
-<h3 id="3-单端口多服务-——-Nginx"><a href="#3-单端口多服务-——-Nginx" class="headerlink" title="3. 单端口多服务 —— Nginx"></a>3. 单端口多服务 —— Nginx</h3><p>安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的<code>语句</code>，<code>块</code>，再从使用场景出发学习具体写法。</p>
-<p><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/" target="_blank" rel="noopener">How to Configure NGINX</a></p>
-<p>现在接触到的场景有几个，我们可以用一台服务器的一个端口（例如80端口）同时为多个域名提供不同服务。原理很简单，就是Nginx充当了“前台”的作用，对提交的不同请求进行“导流”。</p>
-<p>例如我一台服务器希望提供四个功能：API、论坛、官网、博客，每个功能都想通过80端口，但一个端口只能被一个程序占用，这个时候就能用上Nginx了。</p>
-<table>
-<thead>
-<tr>
-<th>Public Host &amp; Port</th>
-<th>Service Host &amp; Port</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cqu.andream.app:80</td>
-<td>localhost:4000</td>
-<td>Cqueue的API</td>
-</tr>
-<tr>
-<td>forum.andream.app:80</td>
-<td>localhost:4567</td>
-<td>NodeBB搭建的论坛</td>
-</tr>
-<tr>
-<td>note.andream.app:80</td>
-<td>localhost:4001</td>
-<td>Andream记事的官网</td>
-</tr>
-<tr>
-<td>blog.andream.app:80</td>
-<td>localhost:4002</td>
-<td>Hexo搭建的博客</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4-定时任务-——-crontab"><a href="#4-定时任务-——-crontab" class="headerlink" title="4. 定时任务 —— crontab"></a>4. 定时任务 —— crontab</h3><p>最近写博客都是在PC上写完，同步到github上，现在想把github上的文章再同步到我的服务器上，然后通过<code>blog.andream.app</code>访问。思路就是每分钟执行一次<code>git pull</code>，于是用到了定时任务。（当然，也有人会说为什么不直接把域名跳转到github呢？我没试成功。）</p>
-<p>参考：<a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html" target="_blank" rel="noopener">每天一个linux命令（50）：crontab命令</a></p>
-<p>如果你还没读上面的博客，可以先想一想，如果让你自己设计crontab，你会怎么设计？</p>
-<p><code>crontab -c &quot;git pull&quot; -t 60000</code></p>
-<p>如果是我，我会向上面那样：指定要定时执行的命令，以及执行周期。但了解之后你会发现crontab并不这么直接，它的基本格式是这样的：</p>
-<p><code>crontab mycronfile</code></p>
-<p>所有的定时任务存在mycronfile中，像下面那样：</p>
-<p><code>* * * * * git pull</code></p>
-<p>前面五个分别指示定时执行的minutes、hours、days、weeks、months，最后一个是命令。</p>
-<p>这样有什么好处呢？一是对<code>定时</code>的表示能力更丰富了（具体见博客），二是系统本身就有许多定时任务，一开机就要开始运行，一定要存起来，才能真正实现完全自动化。</p>
-<p>相关文件：</p>
-<ul>
-<li><code>/etc/crontab</code>：系统级定时任务</li>
-<li><code>/var/spool/cron</code>：用户级定时任务目录</li>
-<li><code>/var/log/cron</code>：任务日志</li>
-</ul>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-从做一个计算器出发学习CSS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/26/从做一个计算器出发学习CSS/">从做一个计算器出发学习CSS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/26/从做一个计算器出发学习CSS/" class="article-date">
-  <time datetime="2018-09-26T11:37:09.000Z" itemprop="datePublished">2018-09-26</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+<p>安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的<code>语句</code>，<code>块</code>，再从使用场景 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/">从做一个计算器出发学习CSS</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月26日
+                                19:37
+                            </date>
+                            
+                            <div class="post-content">
+                                <blockquote>
 <p>认识是从实践中来，到实践中去，在实践中接受检验。</p>
 </blockquote>
+
 <p>计算器是网页初学者经常做的了，我的这个例子用Vue来控制面板数据和计算操作，用<code>table</code>和<code>v-for</code>做界面，用<code>CSS</code>控制布局和样式。</p>
+
 <p>做计算器的过程中更加了解了如何正确地使用CSS，因此记录一下，希望能多一些这种经验，总结出自己的学习模式。</p>
-<h2 id="Vue中使用动态Class"><a href="#Vue中使用动态Class" class="headerlink" title="Vue中使用动态Class"></a>Vue中使用动态Class</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"calc_table"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">v-for</span>=<span class="string">"row in panel"</span> <span class="attr">class</span>=<span class="string">"calc_row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"btn in row"</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">:class</span>=<span class="string">"[</span></span></span><br><span class="line"><span class="tag"><span class="string">                &#123; calc_btn: true &#125;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                &#123; calc_btn_equal: btn==='=' &#125;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                &#123; calc_btn_number: btn!=='=' &#125;,</span></span></span><br><span class="line"><span class="tag"><span class="string">                ]"</span> @<span class="attr">click</span>=<span class="string">"input(btn)"</span>&gt;</span> &#123;&#123; btn &#125;&#125; <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用<code>:class</code>可以给元素指定一个<code>ClassObject</code>或<code>ClassObject</code>的数组（以下统称<code>ClassObject</code>），通过这个<code>ClassObject</code>可以“算”出该元素有哪些<code>class</code>。</p>
-<p>为什么要有动态class呢？因为静态class实在太不灵活了。数字按钮要加一个class，=按钮要加另一个，log、sin这些按钮又要加另一个。不仅写起来冗长，而且不能用<code>v-for</code>这种统一的方式来实现了。</p>
-<p>换句话说，<code>ClassObject</code>是元素的状态和它的class之间的<code>关系</code>的一个抽象，形式地说，<code>ClassObject</code>是从元素状态到class的一个映射。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class = ClassObject(state), class ⊂ CSS.allClasses, state ⊂ Vue.data</span><br></pre></td></tr></table></figure>
-<p>而Vue完成的工作就是维护所有的状态（也就是<code>data</code>），当状态变化时重新计算class并同步到相应元素上。</p>
-<p>参考：<a href="https://cn.vuejs.org/v2/guide/class-and-style.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/class-and-style.html</a></p>
-<h2 id="通过Chrome的检查功能学习别人家的CSS"><a href="#通过Chrome的检查功能学习别人家的CSS" class="headerlink" title="通过Chrome的检查功能学习别人家的CSS"></a>通过Chrome的检查功能学习别人家的CSS</h2><blockquote>
-<p>“我前天亲眼见你偷了谷家的代码，吊着打。”<br>“程序员的事，能算偷吗？”</p>
-</blockquote>
-<p>直接Google计算器出来的在线计算器样式就蛮好看的，按钮有渐变效果，这是我不会的。比起一章一章的啃文档，看一个感兴趣的例子源码学起来更快。于是乎右键 -&gt; 检查。</p>
-<p><img src="../img/chrome_inspect.png" alt=""></p>
-<p>在右边可以直接看到对应的CSS样式，filter中可以选择状态进一步筛选。</p>
-<p><img src="../img/chrome_inspect_css.png" alt=""></p>
-<p>参考：<a href="https://developers.google.com/web/tools/chrome-devtools/css/" target="_blank" rel="noopener">Get Started With Viewing And Changing CSS</a></p>
-<h2 id="CSS变量"><a href="#CSS变量" class="headerlink" title="CSS变量"></a>CSS变量</h2><p>“偷”了别人家的代码，界面是好看了，比较不幸的是代码变丑了：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.calc_btn</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_number</span> &#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top,#f5f5f5,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(top,#f5f5f5,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(top,#f5f5f5,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear,left top,left bottom,from(#f5f5f5),<span class="built_in">to</span>(#f1f1f1));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top,#f5f5f5,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(top,#f5f5f5,#f1f1f1);</span><br><span class="line">	<span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorStr=#f5f5f5,EndColorStr=#f1f1f1);</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dedede</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#444</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_equal</span> &#123;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top,#4d90fe,#4787ed);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(top,#4d90fe,#4787ed);</span><br><span class="line">	<span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorStr=#4d90fe,EndColorStr=#4787ed);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(top,#4d90fe,#4787ed);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear,left top,left bottom,from(#4d90fe),<span class="built_in">to</span>(#4787ed));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top,#4d90fe,#4787ed);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#4d90fe</span>;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(top,#4d90fe,#4787ed);</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#3079ed</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fefefe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_number</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top,#f8f8f8,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(top,#f8f8f8,#f1f1f1);</span><br><span class="line">	<span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorStr=#f8f8f8,EndColorStr=#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(top,#f8f8f8,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear,left top,left bottom,from(#f8f8f8),<span class="built_in">to</span>(#f1f1f1));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top,#f8f8f8,#f1f1f1);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#f8f8f8</span>;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(top,#f8f8f8,#f1f1f1);</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#c6c6c6</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#222</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_equal</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top,#4d90fe,#357ae8);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(top,#4d90fe,#357ae8);</span><br><span class="line">	<span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorStr=#4d90fe,EndColorStr=#357ae8);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(top,#4d90fe,#357ae8);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear,left top,left bottom,from(#4d90fe),<span class="built_in">to</span>(#357ae8));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top,#4d90fe,#357ae8);</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#4d90fe</span>;</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(top,#4d90fe,#357ae8);</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#2f5bb7</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fefefe</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于兼容性的原因，设置了很多个background-image，而且除了两个渐变颜色不同，每个元素的内容几乎是一样的。我们的原则是“不要有重复代码”，这还能忍吗？</p>
-<p>不能忍好！</p>
-<p>CSS变量了解一下！</p>
-<p>知道有这个东西后，看看文档，改写代码并不困难。关键是要有去掉重复代码的想法。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.calc_btn</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">	<span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">rgba</span>(0,0,0,0.1);</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top,var(--start-color),<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-ms-linear-gradient</span>(top,var(--start-color),<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-o-linear-gradient</span>(top,var(--start-color),<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear,left top,left bottom,from(var(--start-color)),<span class="built_in">to</span>(var(--end-color)));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top,var(--start-color),<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(top,var(--start-color),<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">filter</span>: progid:DXImageTransform.Microsoft.<span class="built_in">gradient</span>(startColorStr=var(--start-color),EndColorStr=<span class="built_in">var</span>(--end-color));</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="built_in">var</span>(--start-color);</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="built_in">var</span>(--border-color);</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--text-color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_number</span> &#123;</span><br><span class="line">	<span class="attribute">--start-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">	<span class="attribute">--end-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">	<span class="attribute">--border-color</span>: <span class="number">#dedede</span>;</span><br><span class="line">	<span class="attribute">--text-color</span>: <span class="number">#444</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_equal</span> &#123;</span><br><span class="line">	<span class="attribute">--start-color</span>: <span class="number">#4d90fe</span>;</span><br><span class="line">	<span class="attribute">--end-color</span>: <span class="number">#4787ed</span>;</span><br><span class="line">	<span class="attribute">--border-color</span>: <span class="number">#3079ed</span>;</span><br><span class="line">	<span class="attribute">--text-color</span>: <span class="number">#fefefe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_number</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">--start-color</span>: <span class="number">#f8f8f8</span>;</span><br><span class="line">	<span class="attribute">--end-color</span>: <span class="number">#f1f1f1</span>;</span><br><span class="line">	<span class="attribute">--border-color</span>: <span class="number">#c6c6c6</span>;</span><br><span class="line">	<span class="attribute">--text-color</span>: <span class="number">#222</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.calc_btn_equal</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">--start-color</span>: <span class="number">#4d90fe</span>;</span><br><span class="line">	<span class="attribute">--end-color</span>: <span class="number">#357ae8</span>;</span><br><span class="line">	<span class="attribute">--border-color</span>: <span class="number">#c6c6c6</span>;</span><br><span class="line">	<span class="attribute">--text-color</span>: <span class="number">#222</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://www.w3schools.com/css/css3_variables.asp" target="_blank" rel="noopener">https://www.w3schools.com/css/css3_variables.asp</a></p>
 
-      
+<h2 id="vue中使用动态class">Vue中使用动态Class</h2>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<pre><code class="language-html">    &lt;table …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/">解决npm install -g not found</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月22日
+                                14:29
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="场景">场景</h2>
 
+<pre><code class="language-shell"># npm install hexo -g
+</code></pre>
 
-
-  
-    <article id="post-解决npm install -g not found" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/22/解决npm install -g not found/">解决npm install -g not found</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/22/解决npm install -g not found/" class="article-date">
-  <time datetime="2018-09-22T06:29:36.000Z" itemprop="datePublished">2018-09-22</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> npm install hexo -g</span><br></pre></td></tr></table></figure>
 <p>使用-g命令安装npm全局包，之后就可以在命令行中全局使用。</p>
-<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>安装成功后提示下面的错误：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> hexo</span><br><span class="line">-bash: hexo: command not found</span><br></pre></td></tr></table></figure>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>发现hexo并不在<code>path</code>目录下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> which hexo</span><br><span class="line">/usr/bin/which: no hexo in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)</span><br></pre></td></tr></table></figure>
-<p>以hexo为例分析<code>npm install -g</code>的安装过程：</p>
-<ol>
-<li>npm将hexo安装在<code>/usr/local/lib/node_modules/hexo</code>目录下</li>
-<li>将hexo可执行文件<code>/usr/local/lib/node_modules/hexo/bin/hexo</code>链接到<code>/usr/local/bin/hexo</code></li>
-</ol>
-<p>那<code>/usr/local/bin</code>在<code>path</code>中却找不到hexo呢？</p>
-<p>因为npm实际上是安装在<code>prefix</code>这个目录下，而不是<code>/usr/local</code>，如果<code>prefix</code>设置错误就找不到了。</p>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config get prefix</span><br><span class="line">/data/app/janny-hexo</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/bin/lib</span><br></pre></td></tr></table></figure>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
-<li>修改<code>prefix</code>【建议】</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix /usr/local</span><br><span class="line">npm install hexo -g</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>或修改<code>path</code></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:/data/app/janny-hexo/bin</span><br><span class="line">npm install hexo -g</span><br></pre></td></tr></table></figure>
 
-      
+<h2 id="错误">错误</h2>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<p>安装成功后提示下面的错误：</p>
 
+<pre><code class="language-shell"># hexo
+-bash: hexo: command not found
+</code></pre>
 
+<h2 id="分析">分析</h2>
 
-  
-    <article id="educational-Codeforces 1051" class="article article-type-educational" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/21/Codeforces 1051/">Codeforces 1051</a>
-    </h1>
-  
+<p>发现hexo并不在<code>path</code>目录下：</p>
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/21/Codeforces 1051/" class="article-date">
-  <time datetime="2018-09-20T16:35:24.000Z" itemprop="datePublished">2018-09-21</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>分类讨论</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rps</span><span class="params">(<span class="keyword">int</span> t1, <span class="keyword">int</span> t2)</span></span>&#123;</span><br><span class="line">	t1--; t2--;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++)&#123;</span><br><span class="line">		<span class="keyword">char</span> c = s[i];</span><br><span class="line">		<span class="keyword">if</span>(<span class="number">0</span> == t1 &amp;&amp; c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>)&#123;</span><br><span class="line">			s[i] = <span class="number">1</span> == t2 ? <span class="string">'A'</span> : <span class="number">2</span> == t2 ? <span class="string">'0'</span> : s[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">1</span> == t1 &amp;&amp; c &gt;= <span class="string">'A'</span> &amp;&amp; c &lt;= <span class="string">'Z'</span>)&#123;</span><br><span class="line">			s[i] = <span class="number">0</span> == t2 ? <span class="string">'a'</span> : <span class="number">2</span> == t2 ? <span class="string">'0'</span> : s[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">2</span> == t1 &amp;&amp; c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">			s[i] = <span class="number">0</span> == t2 ? <span class="string">'a'</span> : <span class="number">1</span> == t2 ? <span class="string">'A'</span> : s[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="keyword">int</span> c1 = <span class="number">0</span>, c2 = <span class="number">0</span>, c3 = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">int</span> L = s.size();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; L; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i] &gt;= <span class="string">'a'</span> &amp;&amp; s[i] &lt;= <span class="string">'z'</span>)&#123;</span><br><span class="line">				c1++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(s[i] &gt;= <span class="string">'A'</span> &amp;&amp; s[i] &lt;= <span class="string">'Z'</span>)&#123;</span><br><span class="line">				c2++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;= <span class="string">'9'</span>)&#123;</span><br><span class="line">				c3++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(c1 &amp;&amp; c2 &amp;&amp; c3)&#123;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c1 &amp;&amp; c2)&#123;</span><br><span class="line">			<span class="keyword">if</span>(c2 &gt;= c1) rps(<span class="number">2</span>, <span class="number">3</span>); <span class="keyword">else</span> rps(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c1 &amp;&amp; c3)&#123;</span><br><span class="line">			<span class="keyword">if</span>(c3 &gt;= c1) rps(<span class="number">3</span>, <span class="number">2</span>); <span class="keyword">else</span> rps(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c2 &amp;&amp; c3)&#123;</span><br><span class="line">			<span class="keyword">if</span>(c2 &gt;= c3) rps(<span class="number">2</span>, <span class="number">1</span>); <span class="keyword">else</span> rps(<span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c1)&#123;</span><br><span class="line">			rps(<span class="number">1</span>, <span class="number">2</span>); rps(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c2)&#123;</span><br><span class="line">			rps(<span class="number">2</span>, <span class="number">1</span>); rps(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c3)&#123;</span><br><span class="line">			rps(<span class="number">3</span>, <span class="number">2</span>); rps(<span class="number">3</span>, <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> l, r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"YES\n"</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = l; i &lt;= r; i += <span class="number">2</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>分类讨论</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> stat[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">bool</span> nice[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line">		stat[s[i]]++;</span><br><span class="line">		nice[s[i]] = stat[s[i]] == <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> nicecnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(nice[i]) nicecnt++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> index_to_b = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(nicecnt % <span class="number">2</span> != <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!nice[s[i]] &amp;&amp; stat[s[i]] &gt; <span class="number">2</span>)&#123;</span><br><span class="line">				index_to_b = i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(index_to_b == <span class="number">-1</span>)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> index_nice = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i == index_to_b)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">'B'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(!nice[s[i]])&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">'A'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(nice[s[i]])&#123;</span><br><span class="line">			<span class="keyword">if</span>(index_nice &lt; nicecnt/<span class="number">2</span>)&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">'B'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">'A'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			index_nice++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>动态规划</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, K;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dp[<span class="number">1005</span>][<span class="number">2018</span>][<span class="number">4</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> mod = <span class="number">998244353</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; K;</span><br><span class="line"></span><br><span class="line">	dp[<span class="number">1</span>][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>; dp[<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	dp[<span class="number">1</span>][<span class="number">2</span>][<span class="number">2</span>] = <span class="number">1</span>; dp[<span class="number">1</span>][<span class="number">2</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= K &amp;&amp; k &lt;= <span class="number">2</span>*i; k++)&#123;</span><br><span class="line">			dp[i][k][<span class="number">0</span>] = dp[i<span class="number">-1</span>][k][<span class="number">0</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">1</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">2</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">3</span>];</span><br><span class="line">			dp[i][k][<span class="number">1</span>] = dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">0</span>] + dp[i<span class="number">-1</span>][k][<span class="number">1</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">2</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">3</span>];</span><br><span class="line">			dp[i][k][<span class="number">2</span>] = dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">0</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">1</span>] + dp[i<span class="number">-1</span>][k][<span class="number">2</span>];</span><br><span class="line">			dp[i][k][<span class="number">3</span>] = dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">0</span>] + dp[i<span class="number">-1</span>][k<span class="number">-1</span>][<span class="number">1</span>] + dp[i<span class="number">-1</span>][k][<span class="number">3</span>];</span><br><span class="line">			<span class="keyword">if</span>(k &gt;= <span class="number">2</span>)&#123;</span><br><span class="line">				dp[i][k][<span class="number">2</span>] += dp[i<span class="number">-1</span>][k<span class="number">-2</span>][<span class="number">3</span>];</span><br><span class="line">				dp[i][k][<span class="number">3</span>] += dp[i<span class="number">-1</span>][k<span class="number">-2</span>][<span class="number">2</span>];</span><br><span class="line">			&#125;</span><br><span class="line">			dp[i][k][<span class="number">0</span>] %= mod; dp[i][k][<span class="number">1</span>] %= mod;</span><br><span class="line">			dp[i][k][<span class="number">2</span>] %= mod; dp[i][k][<span class="number">3</span>] %= mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">		res += dp[n][K][i];</span><br><span class="line">	&#125;</span><br><span class="line">	res %= mod;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="language-shell"># which hexo
+/usr/bin/which: no hexo …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/codeforces-1051/">Codeforces 1051</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月21日
+                                00:35
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="a">A</h2>
 
-      
+<p>分类讨论</p>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<pre><code class="language-C++">#include &lt;bits/stdc++.h&gt;
 
+using namespace std;
 
+int T;
+string s;
 
-  
-    <article id="post-《UML精粹》读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/14/《UML精粹》读书笔记/">《UML精粹》读书笔记</a>
-    </h1>
-  
+void rps(int t1, int t2){
+    t1--; t2--;
+    for(int i = 0; i &lt; s.size(); i++){
+        char c …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/codeforces-1051/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《UML精粹》读书笔记</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月14日
+                                00:00
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="引言">引言</h2>
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/14/《UML精粹》读书笔记/" class="article-date">
-  <time datetime="2018-09-13T16:00:00.000Z" itemprop="datePublished">2018-09-14</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h3 id="UML使用方式"><a href="#UML使用方式" class="headerlink" title="UML使用方式"></a>UML使用方式</h3><blockquote>
+<h3 id="uml使用方式">UML使用方式</h3>
+
+<blockquote>
 <p>UML在软件开发中作用的实质是人们不同的使用方式。</p>
 </blockquote>
+
 <p>作者在引言第一节就抛出了本书关键的一个问题：你想使用好UML吗？先问问自己你为什么要用UML，你期望用UML做什么？</p>
-<p>UML三种使用方法：</p>
-<ol>
-<li>草图 UML as sketch</li>
-<li>蓝图 UML as blueprint</li>
-<li>编程语言 UML as programing language</li>
-</ol>
-<p>草图的实质是选择，用于确定一个方案值不值得去做，而不关心具体怎么做。蓝图的实质是描述，并且尽可能精确细节的描述。草图是探究性的，蓝图是定义性的。</p>
-<p>用作编程语言指的是将UML直接编译为可执行的程序代码，这自然要求比蓝图更精确的描述能力。</p>
-<p>另一个看待UML的角度是：用UML对什么建模？</p>
-<ol>
-<li>软件视角：对软件建模，UML成分直接映射为软件成分</li>
-<li>概念视角：对概念建模，UML成分只是对概念的表述，至于软件怎么实现，另当别论</li>
-</ol>
-<p>UML到底用作什么，UML和设计的关系为何？引起很多争议。作者随后表明自己立场，也是我赞同的立场：<br><strong>UML用作草图，可用于软件视角和概念视角。不赞同用于蓝图和编程语言。</strong></p>
-<blockquote>
-<p>图示法的魅力在于直观，而不是形式定义。</p>
-</blockquote>
-<h3 id="你的UML画的不符合标准！？"><a href="#你的UML画的不符合标准！？" class="headerlink" title="你的UML画的不符合标准！？"></a>你的UML画的不符合标准！？</h3><p>UML具有指定性规则还是描述性规则？换句话说，UML标准是按照某个机构某个文档说的算，还是使用者说的算？这个问题乍一看有点傻，其实是因为UML标准繁杂不统一导致的。</p>
-<blockquote>
-<p>如果你是一名草图绘制人员或一名蓝图绘制人员，不必更多强调有合法的UML，更为重要的是，要对你的系统有一个好的设计。</p>
-</blockquote>
-<p><strong>把精力更多的用在如何设计一个好的系统，而非拘泥于标准。</strong></p>
-<p><strong>如果有非UML图更适合，feel free to use it.</strong></p>
-<h2 id="何处着手使用UML"><a href="#何处着手使用UML" class="headerlink" title="何处着手使用UML"></a>何处着手使用UML</h2><p><strong>从类图和顺序图着手了解UML，再根据需要去了解更高级的UML</strong></p>
-<blockquote>
-<p>没有人能了解UML的全部，你应该寻求为你和你的同事们的工作的UML子集。</p>
-</blockquote>
-<h3 id="更多资料"><a href="#更多资料" class="headerlink" title="更多资料"></a>更多资料</h3><p><a href="https://book.douban.com/subject/1792387/" target="_blank" rel="noopener">UML和模式应用</a><br><a href="https://book.douban.com/subject/1435956/" target="_blank" rel="noopener">UML参考手册</a><br><a href="https://book.douban.com/subject/1229923/" target="_blank" rel="noopener">重构</a><br><a href="https://book.douban.com/subject/1052241/" target="_blank" rel="noopener">设计模式</a></p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>作者推崇的过程：</p>
-<p>迭代风格、阶段提交、时间框定、回归测试、重构、连续集成、响应变更、迭代回顾</p>
-<ul>
-<li>敏捷过程</li>
-<li>极限编程（XP）</li>
-<li>Scrum</li>
-<li>Crystal</li>
-<li>DSDM</li>
-<li>Rational统一过程（RUP）</li>
-</ul>
-<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><h2 id="顺序图"><a href="#顺序图" class="headerlink" title="顺序图"></a>顺序图</h2><h2 id="部署图"><a href="#部署图" class="headerlink" title="部署图"></a>部署图</h2><h2 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h2><h2 id="状态机图"><a href="#状态机图" class="headerlink" title="状态机图"></a>状态机图</h2><h2 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h2>
-      
 
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Vue基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/13/Vue基础/">Vue基础</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/13/Vue基础/" class="article-date">
-  <time datetime="2018-09-12T16:00:00.000Z" itemprop="datePublished">2018-09-13</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ViewModel 使用Vue实例联系起HTML元素(View)和data(Model)<br>响应式 当data变化后会立即同步变化View<br>组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用</p>
-<h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; rawHtml &#125;&#125;</span><br><span class="line">&lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;</span><br><span class="line">v-bind:id=&quot;dynamicId&quot;</span><br><span class="line">v-bind:disabled=&quot;isButtonDisabled&quot;</span><br><span class="line">v-bind:id=&quot;&apos;list-&apos; + id&quot;</span><br><span class="line">v-if=&quot;seen&quot;</span><br><span class="line">v-on:click=&quot;doSomething&quot;</span><br><span class="line"></span><br><span class="line">v-bind:href=&quot;url&quot;  缩写为  :href=&quot;url&quot;</span><br><span class="line">v-on:click=&quot;doSomething&quot;  缩写为  @click=&quot;doSomething&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// &#123;&#123; message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125;&#125;</span><br><span class="line">&#123;&#123; reversedMessage &#125;&#125;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el: &apos;#example&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &apos;Hello&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    // 计算属性的 getter</span><br><span class="line">    reversedMessage: function () &#123;</span><br><span class="line">      // `this` 指向 vm 实例</span><br><span class="line">      return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>计算属性和函数区别：计算属性是基于它们的依赖进行缓存的。只在相关依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</p>
-<p>计算属性setter</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  fullName: &#123;</span><br><span class="line">    // getter</span><br><span class="line">    get: function () &#123;</span><br><span class="line">      return this.firstName + &apos; &apos; + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    // setter</span><br><span class="line">    set: function (newValue) &#123;</span><br><span class="line">      var names = newValue.split(&apos; &apos;)</span><br><span class="line">      this.firstName = names[0]</span><br><span class="line">      this.lastName = names[names.length - 1]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Class-与-Style"><a href="#Class-与-Style" class="headerlink" title="Class 与 Style"></a>Class 与 Style</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;static&quot;</span><br><span class="line">     v-bind:class=&quot;&#123; active: isActive, &apos;text-danger&apos;: hasError &#125;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">和如下 data：</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  isActive: true,</span><br><span class="line">  hasError: false</span><br><span class="line">&#125;</span><br><span class="line">结果渲染为：</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;static active&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：</span><br><span class="line"></span><br><span class="line">&lt;div v-bind:class=&quot;classObject&quot;&gt;&lt;/div&gt;</span><br><span class="line">data: &#123;</span><br><span class="line">  isActive: true,</span><br><span class="line">  error: null</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">  classObject: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      active: this.isActive &amp;&amp; !this.error,</span><br><span class="line">      &apos;text-danger&apos;: this.error &amp;&amp; this.error.type === &apos;fatal&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">直接绑定到一个样式对象通常更好，这会让模板更清晰：</span><br><span class="line"></span><br><span class="line">&lt;div v-bind:style=&quot;styleObject&quot;&gt;&lt;/div&gt;</span><br><span class="line">data: &#123;</span><br><span class="line">  styleObject: &#123;</span><br><span class="line">    color: &apos;red&apos;,</span><br><span class="line">    fontSize: &apos;13px&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">同样的，对象语法常常结合返回对象的计算属性使用。</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Vue入门" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/13/Vue入门/">Vue入门</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2018/09/13/Vue入门/" class="article-date">
-  <time datetime="2018-09-12T16:00:00.000Z" itemprop="datePublished">2018-09-13</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+<p>UML三种使用方法：
+1. 草图 UML as sketch
+2. 蓝图 UML as blueprint
+3. 编程语言 UML as …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月13日
+                                00:00
+                            </date>
+                            
+                            <div class="post-content">
+                                <blockquote>
 <p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
 </blockquote>
-<h2 id="Hello-Vue-——-声明式渲染"><a href="#Hello-Vue-——-声明式渲染" class="headerlink" title="Hello Vue —— 声明式渲染"></a>Hello Vue —— 声明式渲染</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    Hello Vue, My name is xxx.</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    Hello Vue, My name is &#123;&#123; name &#125;&#125;.</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/unpkg.com/</span>vue<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">    var obj = new Vue(&#123;</span></span><br><span class="line"><span class="string">        el: '#app',</span></span><br><span class="line"><span class="string">        data: &#123;</span></span><br><span class="line"><span class="string">            name: 'Biao'</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这个代码很好懂，目的是用js动态填充<code>文档元素</code>里的模板。</p>
-<p>从面向对象的角度来理解Vue的工作原理，那么这段代码最关键的一个词就是：new。就好像一首诗的“诗眼”一样。</p>
-<p>通过new创建了一个Vue对象实例，而这个对象将<code>文档元素</code>和<code>数据</code>联系在了一起。注意，Vue并非是简单地“模板替换”，在console里输入obj.name=’Tony’，你会发现文档<code>响应式</code>的改变了，这意味着Vue对象<code>obj</code>维护着元素<code>#app</code>和其他Vue属性<code>data</code>之间的关系。</p>
-<p>再提一问：Vue为什么要这样维护？比用DOM维护有什么好处？答案是DOM将结点元素视为一个对象，而Vue将有结构的数据视为一个对象。用Vue修改name只需要obj.name=’Tony’即可，而用DOM要先document.getElementById(‘app’)再修改innerHTML。</p>
-<p>如果再深究一步：Vue怎样实现这样的维护？那所有的秘密都藏在<code>&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;</code>这一行里了，恐怕只有阅读了源码才能清楚。</p>
-<h2 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">var obj = new Vue(&#123;</span><br><span class="line">  el: '#app',</span><br><span class="line">  data: &#123;</span><br><span class="line">    seen: true,</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; text: '学习 JavaScript' &#125;,</span><br><span class="line">      &#123; text: '学习 Vue' &#125;,</span><br><span class="line">      &#123; text: '整个牛项目' &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="速查手册"><a href="#速查手册" class="headerlink" title="速查手册"></a>速查手册</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">v-if=&quot;seen&quot;</span><br><span class="line">v-for=&quot;todo in todos&quot;</span><br><span class="line">v-on:click=&quot;reverseMessage&quot;    // 事件绑定</span><br><span class="line">v-model=&quot;message&quot;   // 表单数据绑定</span><br><span class="line">var obj = new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        name: &apos;Biao&apos;,</span><br><span class="line">        seen: true,</span><br><span class="line">        todo: []</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        reverseMessage: function () &#123;</span><br><span class="line">            this.message = this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-      
+<h2 id="hello-vue-声明式渲染">Hello Vue —— 声明式渲染</h2>
 
-      
-        
-    </div>
-  </div>
-  
-</article>
+<pre><code class="language-js">&lt;html&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+    Hello Vue, My name is xxx.
+&lt;/div&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
+                        </article>
+                    
+
+                    
 
 
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-</section>
-        <aside id="sidebar">
-  <nav class="menus">
-  	<ul>
-  		<li><a href="/"><i class="icon icon-home"></i></a></li>
-  		
-			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
-  		
-  		
-			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
-  		
-  		
-  			<li><a href="https://github.com/AndreamApp" target="_blank"><i class="icon icon-github"></i></a></li>
-  		
-		<li><a href="#" onclick="var blur = document.getElementById('bg').style.filter; document.getElementById('bg').style.filter = (blur==='blur(0px)') ? 'blur(10px)' : 'blur(0px)'"><i class="icon" ></i></a></li>
-  	</ul>
-  </nav>
-  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
-</aside>
-
-      </div>
-      <footer id="footer">
-  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-	<div id="footer-info" class="inner">
-      <div>
-	    &copy; 2018 Andream & setup(<a href="http://hexo.io/" target="_blank">Hexo</a>,
-	    <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>), page_visit = <span id="busuanzi_value_page_pv"></span>;
-	  </div>
-	</div>
-</footer>
-
-    </div>
-  </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tag</a>
-  
-    <a href="https://github.com/AndreamApp" class="mobile-nav-link">Github</a>
-  
-  <a href="#" onclick="var blur = document.getElementById('bg').style.filter; document.getElementById('bg').style.filter = (blur==='blur(0px)') ? 'blur(10px)' : 'blur(0px)'" class="mobile-nav-link">Blur</a>
-</nav>
+<ol class="page-navigator">
     
 
-<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+    
+    <li class="current">
+        <a href="/">1</a>
+    </li>
+    
+    <li>
+        <a href="/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="/page/2/">下一页</a>
+    </li>
+    
+</ol>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.andream.app/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/" title="用Sublime画UML">用Sublime画UML</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/" title="【零零碎碎】batch编程">【零零碎碎】batch编程</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/" title="值得一度的文章">值得一度的文章</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/" title="To everyone new to the CODING world like me">To everyone new to the CODING world like me</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/" title="【零零碎碎】Linux命令之情景交融">【零零碎碎】Linux命令之情景交融</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/" title="从做一个计算器出发学习CSS">从做一个计算器出发学习CSS</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/" title="解决npm install -g not found">解决npm install -g not found</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/codeforces-1051/" title="Codeforces 1051">Codeforces 1051</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《UML精粹》读书笔记">《UML精粹》读书笔记</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/" title="Vue入门">Vue入门</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list">
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+            <h3 class="widget-title">标签</h3>
+            <div class="tagcloud">
+                
+                <a href="/tags/vue/">vue</a>
+                
+                <a href="/tags/%E7%9E%8E%E6%89%AF/">瞎扯</a>
+                
+            </div>
+        </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2018 <a href="https://blog.andream.app/">Andream By </a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a>.
+        <a href="http://www.flysnow.org/">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo">maupassant</a>.
+        
+    </div>
+</footer>
 
 
-<script src="/js/script.js"></script>
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
 
 </body>
 </html>

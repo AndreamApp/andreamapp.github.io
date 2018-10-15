@@ -7,28 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vue | Andream</title>
-    <meta property="og:title" content="Vue - Andream">
+    <title>用Sublime画UML | Andream</title>
+    <meta property="og:title" content="用Sublime画UML - Andream">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2018-10-09T20:45:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-10-09T20:45:00&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="Vue">
+    <meta name="description" content="用Sublime画UML">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/tags/vue/">
+    <meta property="og:url" content="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
+    <link rel="stylesheet" href="/css/prism.css">
+    
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.andream.app/tags/vue/index.xml" title="Andream" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
     
 </head>
-
 
 <body>
 <header id="header" class="clearfix">
@@ -44,7 +48,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.andream.app/">首页</a>
+                    <a class="current" href="https://blog.andream.app/">首页</a>
                     
                 </nav>
             </div>
@@ -59,56 +63,85 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">vue</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年9月13日
-                                00:00
-                            </date>
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">用Sublime画UML</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年10月9日
+                            20:45
+                        </date>
+                        
+                        
+                        <div class="post-content">
                             
-                            <div class="post-content">
-                                <blockquote>
-<p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
+
+<p>最近由于UML作业，又要画图了。本人非常讨厌用电脑画图，对齐都要对半天，再整几十个工具箱，看到就想砸电脑。于是去Github寻寻觅觅，找到了<a href="https://github.com/plantuml/plantuml">PlantUML</a> —— 用文字描述UML，然后自动生成图片。再结合Sublime的<a href="https://github.com/jvantuyl/sublime_diagram_plugin">插件</a>，就能一键预览，这就是我要的。</p>
+
+<p>如下图，按下<code>Alt+M</code>预览图片，用<code>Alt+Shift+1</code>分屏</p>
+
+<p><img src="../img/uml_with_sublime_example.png" alt="" /></p>
+
+<p>首先默认你已经安装Java和Sublime，下面简单说下配置的过程：</p>
+
+<h3 id="1-安装sublime-diagram-plugin">1. 安装sublime_diagram_plugin</h3>
+
+<blockquote>
+<p>由于该插件没有加入Package Control仓库中，需要手动下载安装</p>
 </blockquote>
 
-<h2 id="hello-vue-声明式渲染">Hello Vue —— 声明式渲染</h2>
+<p>在Sublime中点击<code>Preferences -&gt; Browse Packages</code>进入插件界面</p>
 
-<pre><code class="language-js">&lt;html&gt;
-
-&lt;div id=&quot;app&quot;&gt;
-    Hello Vue, My name is xxx.
-&lt;/div&gt;
-
-&lt;/html&gt;
+<pre><code class="language-shell">git clone https://github.com/jvantuyl/sublime_diagram_plugin.git
 </code></pre>
 
-<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
-                                <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
-                            </div>
-                        </article>
+<p>随后Sublime会自动加载该插件。</p>
+
+<h3 id="2-安装graphviz">2. 安装Graphviz</h3>
+
+<blockquote>
+<p>Sublime插件要用Graphviz的dot.exe显示图片</p>
+</blockquote>
+
+<p>下载安装<a href="https://www.graphviz.org/">graphviz.org</a></p>
+
+<p>将bin目录加入环境变量PATH，新建变量<code>GRAPHVIZ_DOT=安装目录\bin\dot.exe</code></p>
+
+<p>大功告成！现在打开Sublime输入PlantUML语句，按<code>Alt+M</code>就能得到UML图了！</p>
+
+<h3 id="相关链接">相关链接</h3>
+
+<p><a href="http://plantuml.com/">plantuml.com</a>
+<a href="https://github.com/jvantuyl/sublime_diagram_plugin/issues/30">sublime_diagram_plugin/issues/30</a></p>
+
+<h3 id="还能怎么画uml">还能怎么画uml</h3>
+
+<p>网页端绘制plant uml：<a href="https://www.planttext.com/">planttext.com/</a></p>
+
+<p>使用 Sublime + PlantUML 高效地画图：<a href="https://www.jianshu.com/p/e92a52770832">jianshu.com</a></p>
+
+<p>Chrome插件PlantUML Viewer，实时绘制本地uml文本：<a href="https://chrome.google.com/webstore/detail/plantuml-viewer/legbfeljfbjgfifnkmpoajgpgejojooj/related?hl=zh-CN">chrome.google.com</a></p>
+
+<p>一些样例：<a href="https://real-world-plantuml.com/">real-world-plantuml.com/</a></p>
+
+                        </div>
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
                     
+    
 
-                    
-
-
-
-
+    
+    
                 </div>
             </div>
-
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -206,9 +239,19 @@
 </footer>
 
 
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
 
 
 
