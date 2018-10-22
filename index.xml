@@ -46,22 +46,6 @@ Chrome插件PlantUML Viewer，实时绘制本地uml文本：chrome.google.com
     </item>
     
     <item>
-      <title>值得一读的文章</title>
-      <link>https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/</link>
-      <pubDate>Wed, 03 Oct 2018 12:07:23 +0000</pubDate>
-      
-      <guid>https://blog.andream.app/post/%E5%80%BC%E5%BE%97%E4%B8%80%E8%AF%BB%E7%9A%84%E6%96%87%E7%AB%A0/</guid>
-      <description>随着从学校走向工作，我们在技术领域里扩展足迹，也逐渐推着自己从熟悉到陌生。从C语言到新兴的Go、Kotlin，从排序算法到复杂的工业算法，从SQL到分布式数据库运维，从HTTP到按需定制的协议，从 CLI 到 Web，从课程作业到上架应用，从Windows环境到Linux环境，从独立开发到协同版本控制，从手动构建部署到自动构建部署&amp;hellip;
-这个过程是漫长又迷惑的。我们需要更可靠更专业的知识，没人教，必须自学；主动寻找教程，却遭某些搜索引擎误导，被五花八门的碎片文章充斥了头脑；遇到问题，去Stack Overflow暂时地解决了，却不了解问题的原因，之后接二连三的依然出现问题，问题解决了很多，却没变明智反而越发依赖。
-我们不甘在迷惑中迷路，自要寻找出路。“学而不思则罔，思而不学则殆”，我们的出路就是 —— 清醒地思、有效地学、扎实地用。
-凡遇到问题，多问几个为什么，去追求技术背后的原理，去分析方案背后的原因。深入理解了技术，这是我们分析和解决问题的灵感之源。这个过程当然是需要一定悟性的，也是痛苦的，但这种痛苦是面对问题的痛苦，而快乐的奖赏总在这种痛苦之后，而浮于表面总要受逃避问题的长期痛苦，再令你麻木。一个对技术有所追求的人是乐于清醒的。
-思考和学习不是抠头发，要有根据。官方文档通常是很好的上手点，通常包括Overview、Guide、Tutorial、Example，看完这些就应该对一项技术是用来干什么，解决什么问题，适合什么场景，基础的用法有初步的了解，你就能决定是否要继续学习。接下来就需要寻找好的教材，好的文章。如果没有，就去社区和别人讨论，请教大牛，或者通过阅读源码分析，当有了自己的理解之后也能写成文章供后人参考。但切忌为了表现自己的“才识”而写文章，如果已经有更好的文章，不妨引用，莫要为虚荣而做重复的工作，把精力用到那些未开采的领域，创造性的领域。
- To be the first, the best, or the different.
- 推荐一些高质量的技术文章，主旨是深入理解一些成熟的技术的原理，进而熟练的使用。包括但不限于以下主题：
- Linux命令  systemctl  编程常用工具  Git   systemctl 命令完全指南</description>
-    </item>
-    
-    <item>
       <title>To everyone new to the CODING world like me</title>
       <link>https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/</link>
       <pubDate>Tue, 02 Oct 2018 11:59:35 +0000</pubDate>
