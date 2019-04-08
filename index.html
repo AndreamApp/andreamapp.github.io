@@ -61,6 +61,32 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/">Tensorboard的使用</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月8日
+                                19:50
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="基本使用">基本使用</h2>
+
+<pre><code class="language-shell">tensorboard --logdir=data/tensorboard
+</code></pre>
+
+<h2 id="问题1-多个记录文件警告">问题1：多个记录文件警告</h2>
+
+<p>如果指定<code>logdir</code>下存在多个记录文件，会出现警告：</p>
+
+<p><code>Found more than one metagraph event per run. Overwriting the metagraph with the newest …</code></p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/">用Sublime画UML</a>
                                 </h1>
                             </header>
@@ -324,30 +350,6 @@ void rps(int t1, int t2){
                             <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/">Vue基础</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年9月13日
-                                00:00
-                            </date>
-                            
-                            <div class="post-content">
-                                <p>ViewModel 使用Vue实例联系起HTML元素(View)和data(Model)
-响应式 当data变化后会立即同步变化View
-组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用</p>
-
-<h2 id="模板语法">模板语法</h2>
-
-<pre><code>{{ rawHtml }}
-&lt;span …</code></pre>
-                            </div>
-                            <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/">阅读全文</a></p>
-                        </article>
-                    
 
                     
 
@@ -392,6 +394,10 @@ void rps(int t1, int t2){
         <ul class="widget-list">
             
             <li>
+                <a href="https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Tensorboard的使用">Tensorboard的使用</a>
+            </li>
+            
+            <li>
                 <a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/" title="用Sublime画UML">用Sublime画UML</a>
             </li>
             
@@ -425,10 +431,6 @@ void rps(int t1, int t2){
             
             <li>
                 <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/" title="Vue入门">Vue入门</a>
-            </li>
-            
-            <li>
-                <a href="https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/" title="Vue基础">Vue基础</a>
             </li>
             
         </ul>

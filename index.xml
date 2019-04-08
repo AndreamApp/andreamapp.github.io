@@ -6,10 +6,25 @@
     <description>Recent content on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Oct 2018 20:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Apr 2019 19:50:17 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.andream.app/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tensorboard的使用</title>
+      <link>https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 08 Apr 2019 19:50:17 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description> 基本使用 tensorboard --logdir=data/tensorboard  问题1：多个记录文件警告 如果指定logdir下存在多个记录文件，会出现警告：
+Found more than one metagraph event per run. Overwriting the metagraph with the newest event.
+即只会展示最新的graph，但不影响使用。如果要显示指定的记录文件，可以手动将其复制到一个子文件夹。
+问题2：打不开链接 默认的host是主机名http://DESKTOP-HV74PNE:6006
+不知道是DNS还是什么原因，在我的电脑上打不开。可以另外指定host为localhost
+tensorboard --logdir=data/tensorboard --host localhost --port 8888  写为脚本 为了避免重复输入，将其写为shell脚本
+start &amp;quot;http://localhost:8888&amp;quot; tensorboard --logdir=data/tensorboard --host localhost --port 8888  </description>
+    </item>
     
     <item>
       <title>用Sublime画UML</title>

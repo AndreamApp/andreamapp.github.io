@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>【零零碎碎】batch编程 | Andream</title>
-    <meta property="og:title" content="【零零碎碎】batch编程 - Andream">
+    <title>Tensorboard的使用 | Andream</title>
+    <meta property="og:title" content="Tensorboard的使用 - Andream">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-10-03T12:07:23&#43;08:00">
+    <meta property="article:published_time" content="2019-04-08T19:50:17&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2018-10-03T12:07:23&#43;08:00">
+    <meta property="article:modified_time" content="2019-04-08T19:50:17&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="【零零碎碎】batch编程">
+    <meta name="description" content="Tensorboard的使用">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/">
+    <meta property="og:url" content="https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -65,40 +65,45 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">【零零碎碎】batch编程</h1>
+                            <h1 class="post-title">Tensorboard的使用</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年10月3日
-                            12:07
+                            2019年4月8日
+                            19:50
                         </date>
                         
                         
                         <div class="post-content">
                             
 
-<h2 id="关于路径">关于路径</h2>
+<h2 id="基本使用">基本使用</h2>
 
-<blockquote>
-<p>Q: 如何引用相对目录/文件？</p>
-</blockquote>
-
-<p>A: <code>%~dp0</code>表示当前batch文件所在的目录，以\结尾。</p>
-
-<h3 id="示例">示例</h3>
-
-<pre><code class="language-shell">// 愚蠢的写法
-forever start -c python C:\Users\Andream\Desktop\utils\dr.py
-// 正常的写法1
-forever start -c python %~dp0dr.py
-// 正常的写法2
-cd %~dp0
-forever start -c python dr.py
+<pre><code class="language-shell">tensorboard --logdir=data/tensorboard
 </code></pre>
 
-<pre><code class="language-shell">// 愚蠢的写法
-hexo new temp &amp;&amp; sub.lnk &quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&quot;
-// 正常的写法
-hexo new temp &amp;&amp; sub.lnk &quot;%~dp0source\_posts\temp.md&quot;
+<h2 id="问题1-多个记录文件警告">问题1：多个记录文件警告</h2>
+
+<p>如果指定<code>logdir</code>下存在多个记录文件，会出现警告：</p>
+
+<p><code>Found more than one metagraph event per run. Overwriting the metagraph with the newest event.</code></p>
+
+<p>即只会展示最新的<code>graph</code>，但不影响使用。如果要显示指定的记录文件，可以手动将其复制到一个子文件夹。</p>
+
+<h2 id="问题2-打不开链接">问题2：打不开链接</h2>
+
+<p>默认的host是主机名<code>http://DESKTOP-HV74PNE:6006</code></p>
+
+<p>不知道是DNS还是什么原因，在我的电脑上打不开。可以另外指定host为<code>localhost</code></p>
+
+<pre><code class="language-shell">tensorboard --logdir=data/tensorboard --host localhost --port 8888
+</code></pre>
+
+<h2 id="写为脚本">写为脚本</h2>
+
+<p>为了避免重复输入，将其写为shell脚本</p>
+
+<pre><code class="language-shell">start &quot;http://localhost:8888&quot;
+tensorboard --logdir=data/tensorboard --host localhost --port 8888
 </code></pre>
 
                         </div>
