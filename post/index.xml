@@ -17,14 +17,14 @@
       <pubDate>Thu, 25 Apr 2019 08:58:30 +0800</pubDate>
       
       <guid>https://blog.andream.app/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
-      <description> 官方资料  Unity Manual
+      <description>官方资料  Unity Manual
  Scripting API
   视频资料  史上最全Unity3D教程
  【极客学院】Unity3D入门教学 + 附c#编程基础
  【合集】Unity3D入门教程|黑马程序员 
  雨松MOMO
  基于 Unity 引擎的网络游戏设计与开发（复旦大学） | Coursera
-  </description>
+  场景搭建 脚本控制 键盘鼠标 GUI控件 粒子</description>
     </item>
     
     <item>
@@ -73,18 +73,7 @@ Chrome插件PlantUML Viewer，实时绘制本地uml文本：chrome.google.com
       <guid>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</guid>
       <description> 关于路径  Q: 如何引用相对目录/文件？
  A: %~dp0表示当前batch文件所在的目录，以\结尾。
-示例 // 愚蠢的写法 forever start -c python C:\Users\Andream\Desktop\utils\dr.py // 正常的写法1 forever start -c python %~dp0dr.py // 正常的写法2 cd %~dp0 forever start -c python dr.py  // 愚蠢的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&amp;quot; // 正常的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;%~dp0source\_posts\temp.md&amp;quot;  </description>
-    </item>
-    
-    <item>
-      <title>To everyone new to the CODING world like me</title>
-      <link>https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/</link>
-      <pubDate>Tue, 02 Oct 2018 11:59:35 +0000</pubDate>
-      
-      <guid>https://blog.andream.app/post/to-everyone-new-to-the-coding-world-like-me/</guid>
-      <description>The first step is always difficult.
-1. where to get started with a new technolygy?  see guide doc see tutorial video follow a good textbook read source code of examples, try to catch the key point and basic usage give a practice  No one can be always right, the key is to know whether you are right or wrong.
-2. how to evaluate your thought is right or wrong?</description>
+示例 // 不好的写法 forever start -c python C:\Users\Andream\Desktop\utils\dr.py // 正常的写法1 forever start -c python %~dp0dr.py // 正常的写法2 cd %~dp0 forever start -c python dr.py  // 不好的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&amp;quot; // 正常的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;%~dp0source\_posts\temp.md&amp;quot;  </description>
     </item>
     
     <item>
