@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Andream云同步协议解析 | Andream</title>
+    <meta property="og:title" content="Andream云同步协议解析 - Andream">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-08-14T13:29:23&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-08-14T13:29:23&#43;08:00">
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="Andream云同步协议解析">
+        
+    <meta name="author" content="">
+    <meta property="og:url" content="https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.andream.app/">
+                        Andream
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.andream.app/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Andream云同步协议解析</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年8月14日
+                            13:29
+                        </date>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h2 id="用户需求">用户需求</h2>
+
+<ul>
+<li>每个客户端有一个<code>sqlite</code>数据库，存储了用户的笔记数据；</li>
+<li>每条笔记数据包含<code>id, title, content, created_time, modified_time, trash</code>等字段；</li>
+<li>在离线状态下，用户可对笔记做<code>增删改</code>操作，称为<code>变更</code>；</li>
+<li>在在线状态下，需要将客户端产生的变更同步到服务器上，称为<code>上同步</code>；</li>
+<li>在在线状态下，需要将其他客户端产生的变更同步到本客户端，称为<code>下同步</code>；</li>
+</ul>
+
+<h2 id="技术讨论">技术讨论</h2>
+
+<ul>
+<li>为了提高服务的稳定性，需要使用CS架构；</li>
+<li>数据一定以某种形式存储在服务器上。可以是sql数据库（mysql）或nosql数据库（mongodb），由于服务端不需复杂数据查询，甚至可以是某种有组织的文件形式。</li>
+</ul>
+
+<p>对于不同的技术路线，要问三个问题：</p>
+
+<ol>
+<li>存储什么数据？</li>
+<li>如何存储？</li>
+<li>如何将这些数据从客户端传输到服务端？</li>
+</ol>
+
+<p>下面讨论我想到的四种技术路线：</p>
+
+<ol>
+<li>直接同步整个数据库文件</li>
+<li>离线存储并同步变更</li>
+<li>在线发布和订阅变更</li>
+<li>基于时间戳协商的变更识别和冲突解决的同步策略</li>
+</ol>
+
+<h3 id="1-直接同步整个数据库文件">1. 直接同步整个数据库文件</h3>
+
+<p>这种办法最为简单粗暴，客户端不需要另外存储数据，服务端需要存储不同时间结点的sqlite数据库文件；
+按文件方式存储；
+可使用ftp或http传输数据。</p>
+
+<p>优点是实现上同步很简单，只需上传一个文件。</p>
+
+<p>缺点是实现下同步需要下载其他所有客户端的sqlite文件，再到本地解析。多客户端联合使用时会造成难以解决的混乱。并且运算资源消耗大，流量消耗大，产生一条变更后需要同步n条笔记，是很浪费的。</p>
+
+<p>可以用做云备份，但不适合细粒度的云同步。通过自定义数据格式而非直接上传数据库，可以缩减数据大小。</p>
+
+<h3 id="2-离线存储并同步变更">2. 离线存储并同步变更</h3>
+
+<p>这种办法需要除了sqlite中原本的数据，客户端需要存储额外的数据——即哪条笔记发生过变更；服务端也要按不同设备分别存储各自上传的变更；
+可以给note表加一个列来说明，也可以新建一个带有note外键的表；
+在进行同步时，将客户端的变更对应的笔记上同步；将服务端的其他变更进行下同步；</p>
+
+<p>优点是增量同步，比较节省流量和计算资源，可以实现基本上同步和下同步。</p>
+
+<p>缺点是对同一笔记多次变更时需要在客户端和服务端进行合并计算。</p>
+
+<h3 id="3-在线发布和订阅变更">3. 在线发布和订阅变更</h3>
+
+<p>上一种方法将变更在离线时累积保存起来，在线时再统一上传同步；这种方法则从实时性考虑，采用发布订阅者模式，所有在线的客户端都作为服务端的发布者和订阅者，不须持久化存储变更，只需在变更时将其实时发布到服务端并广播到所有订阅者，实现所有客户端能够最快同步到最新的变更；可以使用WebSocket等长连接的方式传输实时变更数据。</p>
+
+<p>优点是同步速度快，对于多客户端同时在线的情况体验良好，良好的实时同步也减轻了离线同步的工作量。</p>
+
+<p>缺点是需要客户端保持在线，这是一个不确定的约束，因此只能作为一个补充策略，无法单独完成同步工作。</p>
+
+<h3 id="4-基于时间戳协商的变更识别和冲突解决的同步策略">4. 基于时间戳协商的变更识别和冲突解决的同步策略</h3>
+
+<p>这种方法作为离线同步的最终方案，解决了方法1的流量消耗大和方法2的变更需要合并的问题，总体较为简单。</p>
+
+<p>在客户端不需要存储额外数据；在服务端存储目前最新的所有数据，不仅仅是变更的数据（这也符合云同步的直觉，数据是存在云上的）；
+可以使用sql和nosql或自定义数据格式的方式存储，这和客户端的数据存储方式是独立的；
+使用三个接口完成协议的协商和数据传输，接口可以是HTTP的REST接口；</p>
+
+<p>优点是高效（最快3次网络请求）、可靠（使用锁机制、hash码、超时重传）、冲突解决（冲突笔记进入废纸篓）、安全（加密传输）、并发阻塞（避免并发情况）；</p>
+
+<p>缺点是暂时不支持并发，当一个客户端同步时，其他客户端将被阻塞；</p>
+
+<p>下面详细描述该方法细节。</p>
+
+<h2 id="技术细节">技术细节</h2>
+
+<p>该方法分为五个步骤：</p>
+
+<ol>
+<li>交换时间戳</li>
+<li>确认冲突策略</li>
+<li>上传上同步数据</li>
+<li>接收下同步数据</li>
+<li>发送成功信号</li>
+</ol>
+
+<p>除登录接口外需要使用到三个RESTful接口：</p>
+
+<ol>
+<li>exchangeTimestamps（完成步骤1）</li>
+<li>exchangeData（完成步骤3、4）</li>
+<li>ack（完成步骤5）</li>
+</ol>
+
+<h3 id="1-交换时间戳">1. 交换时间戳</h3>
+
+<p>上传本地数据库所有项的(id, modified_time, lastsync_time)，打包成二进制（一项20字节），压缩，加上hash，封装发送至服务端。</p>
+
+<p>服务端接收到exchangeTimestamps请求时则将该用户同步请求上锁，屏蔽该用户其他同步请求，避免并发问题；同时将服务端数据库的时间戳按同样方式1装发回客户端。</p>
+
+<h3 id="2-确认冲突策略">2. 确认冲突策略</h3>
+
+<p>客户端和服务端分别接收到对方的时间戳列表后，和自身的时间戳进行比较，可以将所有笔记分为四个类别：</p>
+
+<ol>
+<li>未变更（modified_time &lt; lastsync_time）</li>
+<li>客户端变更，需要上同步（客户端modified_time &gt; lastsync_time）</li>
+<li>服务端变更，需要下同步（服务端modified_time &gt; lastsync_time）</li>
+<li>两端都变更，需要冲突解决（两个都modified_time &gt; lastsync_time）</li>
+</ol>
+
+<p>其中冲突解决分为三种方式：</p>
+
+<ol>
+<li>本地覆盖云：客户端冲突项将被作为上同步项上传至服务端，服务端冲突项则被拷贝到废纸篓</li>
+<li>云覆盖本地：服务端冲突项将被作为下同步项下载至客户端，客户端冲突项则被拷贝到废纸篓</li>
+<li>更新覆盖：两端中modified_time大的一项覆盖小的一项，小的一项被拷贝到废纸篓</li>
+</ol>
+
+<p>由于双方已经交换了时间戳，只要确定一个冲突解决策略，所有的冲突项将转换为同步项，且双方将计算得到相同的上同步项和下同步项。因此当客户端确定了冲突解决策略后，将其作为一个参数，在上同步时同时传递给服务端，服务端据此计算出下同步项。</p>
+
+<h3 id="3-上传上同步数据">3. 上传上同步数据</h3>
+
+<p>当客户端确认了冲突解决策略后，上同步项就确定了。接下来只需要按照协议封装好上同步项，传输至服务端即可。</p>
+
+<p>按协议打包 + 冲突解决策略 + hash + 加密 + 压缩</p>
+
+<h3 id="4-接收下同步数据">4. 接收下同步数据</h3>
+
+<p>当服务端接收到上同步数据和冲突解决策略后，首先将上同步数据写入到数据库中，然后计算并按照相同方式封装下同步项，发回客户端。</p>
+
+<p>按协议打包 + hash + 加密 + 压缩</p>
+
+<p>客户端接收到下同步数据后将其写入数据库中。</p>
+
+<h3 id="5-发送成功信号">5. 发送成功信号</h3>
+
+<p>客户端最终数据写入完成后，向服务端发送一个ack请求，表示同步已经完成，可以关闭同步锁。此时服务端和客户端的数据已经一致，该用户其他客户端可以再向服务器发起同步请求。</p>
+
+<h2 id="容错">容错</h2>
+
+<ol>
+<li>传输错误：hash</li>
+<li>并发错误：加锁</li>
+<li>丢包错误：超时重传</li>
+</ol>
+
+                        </div>
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.andream.app/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a href="https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="【Go学习笔记】表达式">【Go学习笔记】表达式</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/" title="【Go学习笔记】类型">【Go学习笔记】类型</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/" title="Andream云同步协议解析">Andream云同步协议解析</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/" title="【笔试100题】小Q的歌单">【笔试100题】小Q的歌单</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" title="Unity学习资源">Unity学习资源</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/" title="Tensorboard的使用">Tensorboard的使用</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/" title="用Sublime画UML">用Sublime画UML</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/" title="【零零碎碎】batch编程">【零零碎碎】batch编程</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/" title="【零零碎碎】Linux命令之情景交融">【零零碎碎】Linux命令之情景交融</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/" title="从做一个计算器出发学习CSS">从做一个计算器出发学习CSS</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list">
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+            <h3 class="widget-title">标签</h3>
+            <div class="tagcloud">
+                
+                <a href="/tags/vue/">vue</a>
+                
+                <a href="/tags/%E7%9E%8E%E6%89%AF/">瞎扯</a>
+                
+            </div>
+        </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2018 <a href="https://blog.andream.app/">Andream By </a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a>.
+        <a href="http://www.flysnow.org/">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

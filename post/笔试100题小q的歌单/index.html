@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>【零零碎碎】Linux命令之情景交融 | Andream</title>
-    <meta property="og:title" content="【零零碎碎】Linux命令之情景交融 - Andream">
+    <title>【笔试100题】小Q的歌单 | Andream</title>
+    <meta property="og:title" content="【笔试100题】小Q的歌单 - Andream">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-10-01T18:47:47&#43;08:00">
+    <meta property="article:published_time" content="2019-08-13T13:07:54&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2018-10-01T18:47:47&#43;08:00">
+    <meta property="article:modified_time" content="2019-08-13T13:07:54&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="【零零碎碎】Linux命令之情景交融">
+    <meta name="description" content="【笔试100题】小Q的歌单">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/">
+    <meta property="og:url" content="https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -65,103 +65,96 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">【零零碎碎】Linux命令之情景交融</h1>
+                            <h1 class="post-title">【笔试100题】小Q的歌单</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年10月1日
-                            18:47
+                            2019年8月13日
+                            13:07
                         </date>
                         
                         
                         <div class="post-content">
                             
 
-<h3 id="1-yum-y-install中的-y是什么">1. yum -y install中的-y是什么</h3>
+<p>试题链接：<a href="https://www.nowcoder.com/questionTerminal/f3ab6fe72af34b71a2fd1d83304cbbb3">https://www.nowcoder.com/questionTerminal/f3ab6fe72af34b71a2fd1d83304cbbb3</a></p>
 
-<p>就是当遇到<code>Is this OK[y/d/N]</code>提问时自动回答y</p>
+<h2 id="背包问题">背包问题</h2>
 
-<p><a href="http://man.linuxde.net/yum">yum速查</a></p>
-
-<h3 id="2-netstat">2. netstat</h3>
-
-<p>查看端口被哪个程序占用：
-netstat -lptu</p>
-
-<h3 id="3-单端口多服务-nginx">3. 单端口多服务 —— Nginx</h3>
-
-<p>安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的<code>语句</code>，<code>块</code>，再从使用场景出发学习具体写法。</p>
-
-<p><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/">How to Configure NGINX</a></p>
-
-<p>现在接触到的场景有几个，我们可以用一台服务器的一个端口（例如80端口）同时为多个域名提供不同服务。原理很简单，就是Nginx充当了“前台”的作用，对提交的不同请求进行“导流”。</p>
-
-<p>例如我一台服务器希望提供四个功能：API、论坛、官网、博客，每个功能都想通过80端口，但一个端口只能被一个程序占用，这个时候就能用上Nginx了。</p>
-
-<table>
-<thead>
-<tr>
-<th>Public Host &amp; Port</th>
-<th>Service Host &amp; Port</th>
-<th>Note</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>cqu.andream.app:80</td>
-<td>localhost:4000</td>
-<td>Cqueue的API</td>
-</tr>
-
-<tr>
-<td>forum.andream.app:80</td>
-<td>localhost:4567</td>
-<td>NodeBB搭建的论坛</td>
-</tr>
-
-<tr>
-<td>note.andream.app:80</td>
-<td>localhost:4001</td>
-<td>Andream记事的官网</td>
-</tr>
-
-<tr>
-<td>blog.andream.app:80</td>
-<td>localhost:4002</td>
-<td>Hexo搭建的博客</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="4-定时任务-crontab">4. 定时任务 —— crontab</h3>
-
-<p>最近写博客都是在PC上写完，同步到github上，现在想把github上的文章再同步到我的服务器上，然后通过<code>blog.andream.app</code>访问。思路就是每分钟执行一次<code>git pull</code>，于是用到了定时任务。（当然，也有人会说为什么不直接把域名跳转到github呢？我没试成功。）</p>
-
-<p>参考：<a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html">每天一个linux命令（50）：crontab命令</a></p>
-
-<p>如果你还没读上面的博客，可以先想一想，如果让你自己设计crontab，你会怎么设计？</p>
-
-<p><code>crontab -c &quot;git pull&quot; -t 60000</code></p>
-
-<p>如果是我，我会向上面那样：指定要定时执行的命令，以及执行周期。但了解之后你会发现crontab并不这么直接，它的基本格式是这样的：</p>
-
-<p><code>crontab mycronfile</code></p>
-
-<p>所有的定时任务存在mycronfile中，像下面那样：</p>
-
-<p><code>* * * * * git pull</code></p>
-
-<p>前面五个分别指示定时执行的minutes、hours、days、weeks、months，最后一个是命令。</p>
-
-<p>这样有什么好处呢？一是对<code>定时</code>的表示能力更丰富了（具体见博客），二是系统本身就有许多定时任务，一开机就要开始运行，一定要存起来，才能真正实现完全自动化。</p>
-
-<p>相关文件：</p>
+<p>可以将该问题视为背包问题。</p>
 
 <ul>
-<li><code>/etc/crontab</code>：系统级定时任务</li>
-<li><code>/var/spool/cron</code>：用户级定时任务目录</li>
-<li><code>/var/log/cron</code>：任务日志</li>
+<li>歌单为<code>背包</code>，容量为K；</li>
+<li>歌曲为<code>物品</code>，共有X+Y件物品；</li>
+<li>求恰好装满的<code>方案数</code></li>
 </ul>
+
+<p>其实就是01背包问题，可以使用动态规划解决。算法复杂度<code>O((X+Y)K)=O(10^5)</code>。如果使用组合数计算可优化到<code>O((X+Y)^2)=O(10^4)</code>。本文使用动态规划解决。</p>
+
+<h2 id="动态规划">动态规划</h2>
+
+<ul>
+<li>状态定义：dp[i][j]为由前i首歌曲组成长为j的歌单的方案数。dp[X+Y][K]即为答案</li>
+<li>边界条件：dp[0][0] = 1</li>
+<li>转移方程：dp[i][j] = dp[i-1][j] + dp[i-1][j-p(i)], 1&lt;=i&lt;=X+Y, p(i)&lt;=j&lt;=K</li>
+</ul>
+
+<p>其中p(i)是第i首歌曲的长度，可以预先存储在数组中，或定义为：</p>
+
+<pre><code class="language-c++">int p(int i){
+    return i &lt;= X ? A : B;
+}
+</code></pre>
+
+<h2 id="滚动数组">滚动数组</h2>
+
+<p>注意到转移方程中计算dp[i]时只需dp[i-1]的数据，即只需要二维数组中<strong>上一行</strong>的数据。因此可使用一维数组代替二维数组，达到优化空间的目的。按滚动数组可优化为：</p>
+
+<ul>
+<li>状态定义：dp[j]为由前i首歌曲组成长为j的歌单的方案数。<strong>循环结束后</strong>dp[K]即为答案</li>
+<li>边界条件：dp[0] = 1</li>
+<li>转移方程：dp[j] = dp[j] + dp[j-p(i)], 1&lt;=i&lt;=X+Y, <strong>K&gt;=j&gt;=p(i)</strong></li>
+</ul>
+
+<p>注意j的遍历顺序发生了改变，这在本题是必须的。因为计算dp[j]时需要保证dp[j-p(i)]是上一轮的数据。</p>
+
+<p>由此编写动态规划代码即可。</p>
+
+<h2 id="代码">代码</h2>
+
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int K, A, X, B, Y;
+long long dp[1005]; 
+long long p[205];
+long long mod = 1000000007;
+
+long long solve() {
+    for(int i = 1; i &lt;= X; i++) {
+        p[i] = A;
+    }
+    for(int i = X+1; i &lt;= X+Y; i++) {
+        p[i] = B;
+    }
+    dp[0] = 1;
+    for(int i = 1; i &lt;= X+Y; i++) {
+        for(int j = K; j &gt;= p[i]; j--) {
+            dp[j] = dp[j] + dp[j-p[i]];
+            dp[j] %= mod;
+        }
+    }
+    long long res = dp[K];
+    return res;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin &gt;&gt; K &gt;&gt; A &gt;&gt; X &gt;&gt; B &gt;&gt; Y;
+    cout &lt;&lt; solve();
+    return 0;
+}
+</code></pre>
 
                         </div>
 

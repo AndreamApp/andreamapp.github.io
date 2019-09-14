@@ -61,6 +61,136 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/">解决npm install -g not found</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月22日
+                                14:29
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="场景">场景</h2>
+
+<pre><code class="language-shell"># npm install hexo -g
+</code></pre>
+
+<p>使用-g命令安装npm全局包，之后就可以在命令行中全局使用。</p>
+
+<h2 id="错误">错误</h2>
+
+<p>安装成功后提示下面的错误：</p>
+
+<pre><code class="language-shell"># hexo
+-bash: hexo: command not found
+</code></pre>
+
+<h2 id="分析">分析</h2>
+
+<p>发现hexo并不在<code>path</code>目录下：</p>
+
+<pre><code class="language-shell"># which hexo
+/usr/bin/which: no hexo …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/codeforces-1051/">Codeforces 1051</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月21日
+                                00:35
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="a">A</h2>
+
+<p>分类讨论</p>
+
+<pre><code class="language-C++">#include &lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+int T;
+string s;
+
+void rps(int t1, int t2){
+    t1--; t2--;
+    for(int i = 0; i &lt; s.size(); i++){
+        char c …</code></pre>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/codeforces-1051/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《UML精粹》读书笔记</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月14日
+                                00:00
+                            </date>
+                            
+                            <div class="post-content">
+                                <h2 id="引言">引言</h2>
+
+<h3 id="uml使用方式">UML使用方式</h3>
+
+<blockquote>
+<p>UML在软件开发中作用的实质是人们不同的使用方式。</p>
+</blockquote>
+
+<p>作者在引言第一节就抛出了本书关键的一个问题：你想使用好UML吗？先问问自己你为什么要用UML，你期望用UML做什么？</p>
+
+<p>UML三种使用方法：
+1. 草图 UML as sketch
+2. 蓝图 UML as blueprint
+3. 编程语言 UML as …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">Vue入门</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年9月13日
+                                00:00
+                            </date>
+                            
+                            <div class="post-content">
+                                <blockquote>
+<p>有基础的HTML+CSS+JS知识就阔以搞起了</p>
+</blockquote>
+
+<h2 id="hello-vue-声明式渲染">Hello Vue —— 声明式渲染</h2>
+
+<pre><code class="language-js">&lt;html&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+    Hello Vue, My name is xxx.
+&lt;/div&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<p>这是一个最简单的网页了，略去了网页其他不必要的细节，我 …</p>
+                            </div>
+                            <p class="readmore"><a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/">Vue基础</a>
                                 </h1>
                             </header>
@@ -145,6 +275,22 @@
         <ul class="widget-list">
             
             <li>
+                <a href="https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="【Go学习笔记】表达式">【Go学习笔记】表达式</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/" title="【Go学习笔记】类型">【Go学习笔记】类型</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/" title="Andream云同步协议解析">Andream云同步协议解析</a>
+            </li>
+            
+            <li>
+                <a href="https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/" title="【笔试100题】小Q的歌单">【笔试100题】小Q的歌单</a>
+            </li>
+            
+            <li>
                 <a href="https://blog.andream.app/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" title="Unity学习资源">Unity学习资源</a>
             </li>
             
@@ -166,22 +312,6 @@
             
             <li>
                 <a href="https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/" title="从做一个计算器出发学习CSS">从做一个计算器出发学习CSS</a>
-            </li>
-            
-            <li>
-                <a href="https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/" title="解决npm install -g not found">解决npm install -g not found</a>
-            </li>
-            
-            <li>
-                <a href="https://blog.andream.app/post/codeforces-1051/" title="Codeforces 1051">Codeforces 1051</a>
-            </li>
-            
-            <li>
-                <a href="https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《UML精粹》读书笔记">《UML精粹》读书笔记</a>
-            </li>
-            
-            <li>
-                <a href="https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/" title="Vue入门">Vue入门</a>
             </li>
             
         </ul>

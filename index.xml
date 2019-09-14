@@ -6,10 +6,71 @@
     <description>Recent content on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Apr 2019 08:58:30 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2019 11:53:39 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.andream.app/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【Go学习笔记】表达式</title>
+      <link>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Fri, 16 Aug 2019 11:53:39 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>2.1 保留字  if else switch case for goto break continue default fallthrough var const type func interface struct import package map chan defer go range select  2.2 运算符 2.3 初始化 // var a struct { x int } = { 100 } // syntax error // var b []int = { 1, 2, 3 } // syntax error // c := struct {x int; y string} // syntax error: unexpected semicolon or newline // { // } var a = struct{ x int }{100} var b = []int{1, 2, 3} a := []int{ 1, 2, // ok }  2.</description>
+    </item>
+    
+    <item>
+      <title>【Go学习笔记】类型</title>
+      <link>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Thu, 15 Aug 2019 15:53:41 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</guid>
+      <description>1.1 变量  var 定义变量 静态类型，不能在运⾏行期改变变量类型 自动初始化为零 初始化类型推断 多变量定义 多变量赋值 占位变量_ 未使用局部变量视为错误 区分重新赋值和重新定义  var x int // 自动初始化 0 var y = 1 // 自动类型推断 int var ( a int = 2 b float32 = 3.14 c string = &amp;quot;test&amp;quot; d bool = true ) // 多变量定义 func main(){ a, b, d = 3, 3.1415, false // 多变量赋值 a := &amp;quot;test&amp;quot; // 重新定义 fmt.Println(a) }  1.2 常量  const定义常量 常量值必须是编译期可确定的数字、字符串、布尔值 不支持 1UL、2LL 这样的类型后缀 常量组中，如不提供类型和初始化值，那么视作与上⼀一常量相同 可以是len、cap、unsafe.</description>
+    </item>
+    
+    <item>
+      <title>Andream云同步协议解析</title>
+      <link>https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Wed, 14 Aug 2019 13:29:23 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</guid>
+      <description>用户需求  每个客户端有一个sqlite数据库，存储了用户的笔记数据； 每条笔记数据包含id, title, content, created_time, modified_time, trash等字段； 在离线状态下，用户可对笔记做增删改操作，称为变更； 在在线状态下，需要将客户端产生的变更同步到服务器上，称为上同步； 在在线状态下，需要将其他客户端产生的变更同步到本客户端，称为下同步；  技术讨论  为了提高服务的稳定性，需要使用CS架构； 数据一定以某种形式存储在服务器上。可以是sql数据库（mysql）或nosql数据库（mongodb），由于服务端不需复杂数据查询，甚至可以是某种有组织的文件形式。  对于不同的技术路线，要问三个问题：
+ 存储什么数据？ 如何存储？ 如何将这些数据从客户端传输到服务端？  下面讨论我想到的四种技术路线：
+ 直接同步整个数据库文件 离线存储并同步变更 在线发布和订阅变更 基于时间戳协商的变更识别和冲突解决的同步策略  1. 直接同步整个数据库文件 这种办法最为简单粗暴，客户端不需要另外存储数据，服务端需要存储不同时间结点的sqlite数据库文件； 按文件方式存储； 可使用ftp或http传输数据。
+优点是实现上同步很简单，只需上传一个文件。
+缺点是实现下同步需要下载其他所有客户端的sqlite文件，再到本地解析。多客户端联合使用时会造成难以解决的混乱。并且运算资源消耗大，流量消耗大，产生一条变更后需要同步n条笔记，是很浪费的。
+可以用做云备份，但不适合细粒度的云同步。通过自定义数据格式而非直接上传数据库，可以缩减数据大小。
+2. 离线存储并同步变更 这种办法需要除了sqlite中原本的数据，客户端需要存储额外的数据——即哪条笔记发生过变更；服务端也要按不同设备分别存储各自上传的变更； 可以给note表加一个列来说明，也可以新建一个带有note外键的表； 在进行同步时，将客户端的变更对应的笔记上同步；将服务端的其他变更进行下同步；
+优点是增量同步，比较节省流量和计算资源，可以实现基本上同步和下同步。
+缺点是对同一笔记多次变更时需要在客户端和服务端进行合并计算。
+3. 在线发布和订阅变更 上一种方法将变更在离线时累积保存起来，在线时再统一上传同步；这种方法则从实时性考虑，采用发布订阅者模式，所有在线的客户端都作为服务端的发布者和订阅者，不须持久化存储变更，只需在变更时将其实时发布到服务端并广播到所有订阅者，实现所有客户端能够最快同步到最新的变更；可以使用WebSocket等长连接的方式传输实时变更数据。
+优点是同步速度快，对于多客户端同时在线的情况体验良好，良好的实时同步也减轻了离线同步的工作量。
+缺点是需要客户端保持在线，这是一个不确定的约束，因此只能作为一个补充策略，无法单独完成同步工作。
+4. 基于时间戳协商的变更识别和冲突解决的同步策略 这种方法作为离线同步的最终方案，解决了方法1的流量消耗大和方法2的变更需要合并的问题，总体较为简单。
+在客户端不需要存储额外数据；在服务端存储目前最新的所有数据，不仅仅是变更的数据（这也符合云同步的直觉，数据是存在云上的）； 可以使用sql和nosql或自定义数据格式的方式存储，这和客户端的数据存储方式是独立的； 使用三个接口完成协议的协商和数据传输，接口可以是HTTP的REST接口；
+优点是高效（最快3次网络请求）、可靠（使用锁机制、hash码、超时重传）、冲突解决（冲突笔记进入废纸篓）、安全（加密传输）、并发阻塞（避免并发情况）；
+缺点是暂时不支持并发，当一个客户端同步时，其他客户端将被阻塞；
+下面详细描述该方法细节。
+技术细节 该方法分为五个步骤：
+ 交换时间戳 确认冲突策略 上传上同步数据 接收下同步数据 发送成功信号  除登录接口外需要使用到三个RESTful接口：</description>
+    </item>
+    
+    <item>
+      <title>【笔试100题】小Q的歌单</title>
+      <link>https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</link>
+      <pubDate>Tue, 13 Aug 2019 13:07:54 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</guid>
+      <description> 试题链接：https://www.nowcoder.com/questionTerminal/f3ab6fe72af34b71a2fd1d83304cbbb3
+背包问题 可以将该问题视为背包问题。
+ 歌单为背包，容量为K； 歌曲为物品，共有X+Y件物品； 求恰好装满的方案数  其实就是01背包问题，可以使用动态规划解决。算法复杂度O((X+Y)K)=O(10^5)。如果使用组合数计算可优化到O((X+Y)^2)=O(10^4)。本文使用动态规划解决。
+动态规划  状态定义：dp[i][j]为由前i首歌曲组成长为j的歌单的方案数。dp[X+Y][K]即为答案 边界条件：dp[0][0] = 1 转移方程：dp[i][j] = dp[i-1][j] + dp[i-1][j-p(i)], 1&amp;lt;=i&amp;lt;=X+Y, p(i)&amp;lt;=j&amp;lt;=K  其中p(i)是第i首歌曲的长度，可以预先存储在数组中，或定义为：
+int p(int i){ return i &amp;lt;= X ? A : B; }  滚动数组 注意到转移方程中计算dp[i]时只需dp[i-1]的数据，即只需要二维数组中上一行的数据。因此可使用一维数组代替二维数组，达到优化空间的目的。按滚动数组可优化为：
+ 状态定义：dp[j]为由前i首歌曲组成长为j的歌单的方案数。循环结束后dp[K]即为答案 边界条件：dp[0] = 1 转移方程：dp[j] = dp[j] + dp[j-p(i)], 1&amp;lt;=i&amp;lt;=X+Y, K&amp;gt;=j&amp;gt;=p(i)  注意j的遍历顺序发生了改变，这在本题是必须的。因为计算dp[j]时需要保证dp[j-p(i)]是上一轮的数据。
+由此编写动态规划代码即可。
+代码 #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int K, A, X, B, Y; long long dp[1005]; long long p[205]; long long mod = 1000000007; long long solve() { for(int i = 1; i &amp;lt;= X; i++) { p[i] = A; } for(int i = X+1; i &amp;lt;= X+Y; i++) { p[i] = B; } dp[0] = 1; for(int i = 1; i &amp;lt;= X+Y; i++) { for(int j = K; j &amp;gt;= p[i]; j--) { dp[j] = dp[j] + dp[j-p[i]]; dp[j] %= mod; } } long long res = dp[K]; return res; } int main() { ios::sync_with_stdio(false); cin &amp;gt;&amp;gt; K &amp;gt;&amp;gt; A &amp;gt;&amp;gt; X &amp;gt;&amp;gt; B &amp;gt;&amp;gt; Y; cout &amp;lt;&amp;lt; solve(); return 0; }  </description>
+    </item>
     
     <item>
       <title>Unity学习资源</title>

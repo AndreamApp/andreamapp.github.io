@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>【零零碎碎】Linux命令之情景交融 | Andream</title>
-    <meta property="og:title" content="【零零碎碎】Linux命令之情景交融 - Andream">
+    <title>【Go学习笔记】表达式 | Andream</title>
+    <meta property="og:title" content="【Go学习笔记】表达式 - Andream">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-10-01T18:47:47&#43;08:00">
+    <meta property="article:published_time" content="2019-08-16T11:53:39&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2018-10-01T18:47:47&#43;08:00">
+    <meta property="article:modified_time" content="2019-08-16T11:53:39&#43;08:00">
         
     <meta name="Keywords" content="">
-    <meta name="description" content="【零零碎碎】Linux命令之情景交融">
+    <meta name="description" content="【Go学习笔记】表达式">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/">
+    <meta property="og:url" content="https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -65,103 +65,111 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">【零零碎碎】Linux命令之情景交融</h1>
+                            <h1 class="post-title">【Go学习笔记】表达式</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2018年10月1日
-                            18:47
+                            2019年8月16日
+                            11:53
                         </date>
                         
                         
                         <div class="post-content">
                             
 
-<h3 id="1-yum-y-install中的-y是什么">1. yum -y install中的-y是什么</h3>
-
-<p>就是当遇到<code>Is this OK[y/d/N]</code>提问时自动回答y</p>
-
-<p><a href="http://man.linuxde.net/yum">yum速查</a></p>
-
-<h3 id="2-netstat">2. netstat</h3>
-
-<p>查看端口被哪个程序占用：
-netstat -lptu</p>
-
-<h3 id="3-单端口多服务-nginx">3. 单端口多服务 —— Nginx</h3>
-
-<p>安装倒是简单，但一上来就是配置文件，小白一时无法接受。于是先找个教程看起，先弄明白基础的<code>语句</code>，<code>块</code>，再从使用场景出发学习具体写法。</p>
-
-<p><a href="https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/">How to Configure NGINX</a></p>
-
-<p>现在接触到的场景有几个，我们可以用一台服务器的一个端口（例如80端口）同时为多个域名提供不同服务。原理很简单，就是Nginx充当了“前台”的作用，对提交的不同请求进行“导流”。</p>
-
-<p>例如我一台服务器希望提供四个功能：API、论坛、官网、博客，每个功能都想通过80端口，但一个端口只能被一个程序占用，这个时候就能用上Nginx了。</p>
-
-<table>
-<thead>
-<tr>
-<th>Public Host &amp; Port</th>
-<th>Service Host &amp; Port</th>
-<th>Note</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>cqu.andream.app:80</td>
-<td>localhost:4000</td>
-<td>Cqueue的API</td>
-</tr>
-
-<tr>
-<td>forum.andream.app:80</td>
-<td>localhost:4567</td>
-<td>NodeBB搭建的论坛</td>
-</tr>
-
-<tr>
-<td>note.andream.app:80</td>
-<td>localhost:4001</td>
-<td>Andream记事的官网</td>
-</tr>
-
-<tr>
-<td>blog.andream.app:80</td>
-<td>localhost:4002</td>
-<td>Hexo搭建的博客</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="4-定时任务-crontab">4. 定时任务 —— crontab</h3>
-
-<p>最近写博客都是在PC上写完，同步到github上，现在想把github上的文章再同步到我的服务器上，然后通过<code>blog.andream.app</code>访问。思路就是每分钟执行一次<code>git pull</code>，于是用到了定时任务。（当然，也有人会说为什么不直接把域名跳转到github呢？我没试成功。）</p>
-
-<p>参考：<a href="http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html">每天一个linux命令（50）：crontab命令</a></p>
-
-<p>如果你还没读上面的博客，可以先想一想，如果让你自己设计crontab，你会怎么设计？</p>
-
-<p><code>crontab -c &quot;git pull&quot; -t 60000</code></p>
-
-<p>如果是我，我会向上面那样：指定要定时执行的命令，以及执行周期。但了解之后你会发现crontab并不这么直接，它的基本格式是这样的：</p>
-
-<p><code>crontab mycronfile</code></p>
-
-<p>所有的定时任务存在mycronfile中，像下面那样：</p>
-
-<p><code>* * * * * git pull</code></p>
-
-<p>前面五个分别指示定时执行的minutes、hours、days、weeks、months，最后一个是命令。</p>
-
-<p>这样有什么好处呢？一是对<code>定时</code>的表示能力更丰富了（具体见博客），二是系统本身就有许多定时任务，一开机就要开始运行，一定要存起来，才能真正实现完全自动化。</p>
-
-<p>相关文件：</p>
+<h2 id="2-1-保留字">2.1 保留字</h2>
 
 <ul>
-<li><code>/etc/crontab</code>：系统级定时任务</li>
-<li><code>/var/spool/cron</code>：用户级定时任务目录</li>
-<li><code>/var/log/cron</code>：任务日志</li>
+<li>if else switch case for goto break continue default fallthrough</li>
+<li>var const type func interface struct import package map</li>
+<li>chan defer go range select</li>
 </ul>
+
+<h2 id="2-2-运算符">2.2 运算符</h2>
+
+<h2 id="2-3-初始化">2.3 初始化</h2>
+
+<pre><code class="language-go">// var a struct { x int } = { 100 } // syntax error
+// var b []int = { 1, 2, 3 } // syntax error
+// c := struct {x int; y string} // syntax error: unexpected semicolon or newline
+// {
+// }
+var a = struct{ x int }{100}
+var b = []int{1, 2, 3}
+a := []int{
+    1,
+    2, // ok
+}
+</code></pre>
+
+<h2 id="2-4-控制流">2.4 控制流</h2>
+
+<p>无圆括号 + 初始化语句 + 必须紧跟花括号</p>
+
+<pre><code class="language-go">x := 0
+if n := &quot;abc&quot;; x &gt; 0 { // 初始化语句未必就是定义变量，⽐比如 println(&quot;init&quot;) 也是可以的。
+    println(n[2])
+} else if x &lt; 0 { // 注意 else if 和 else 左⼤大括号位置。
+    println(n[1])
+} else {
+    println(n[0])
+}
+</code></pre>
+
+<p>for循环三种典型用法</p>
+
+<pre><code class="language-go">s := &quot;abc&quot;
+for i, n := 0, len(s); i &lt; n; i++ { // 常⻅见的 for 循环，⽀支持初始化语句。
+    println(s[i])
+}
+
+n := len(s)
+for n &gt; 0 {                         // 替代 while (n &gt; 0) {}
+    println(s[n])                   // 替代 for (; n &gt; 0;) {}
+    n--
+}
+
+for {                               // 替代 while (true) {}
+    println(s)                      // 替代 for (;;) {}
+}
+</code></pre>
+
+<p>range迭代器for循环</p>
+
+<p>注意range会复制index和value</p>
+
+<pre><code class="language-go">s := &quot;abc&quot;
+for i := range s { // 忽略 2nd value，⽀支持 string/array/slice/map。
+    println(s[i])
+}
+
+for _, c := range s { // 忽略 index。
+    println(c)
+}
+
+for range s { // 忽略全部返回值，仅迭代。
+    ...
+}
+
+m := map[string]int{&quot;a&quot;: 1, &quot;b&quot;: 2}
+for k, v := range m { // 返回 (key, value)。
+    println(k, v)
+}
+</code></pre>
+
+<p>switch：任意类型 + 变量常量 + 可省略break + fallthrough</p>
+
+<pre><code class="language-go">x := []int{1, 2, 3}
+i := 2
+switch i {
+    case x[1]:
+        println(&quot;a&quot;)
+        fallthrough // 不再判断下一条件，直接跳转到下一条件
+    case 1, 3:
+        println(&quot;b&quot;)
+    default:
+        println(&quot;c&quot;)
+}
+</code></pre>
 
                         </div>
 
