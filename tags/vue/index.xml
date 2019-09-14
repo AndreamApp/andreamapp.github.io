@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on Andream</title>
-    <link>https://blog.andream.app/tags/vue/</link>
+    <link>https://andreamapp.github.io/tags/vue/</link>
     <description>Recent content in Vue on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.andream.app/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andreamapp.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vue入门</title>
-      <link>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</link>
+      <link>https://andreamapp.github.io/post/vue%E5%85%A5%E9%97%A8/</link>
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://andreamapp.github.io/post/vue%E5%85%A5%E9%97%A8/</guid>
       <description>有基础的HTML+CSS+JS知识就阔以搞起了
  Hello Vue —— 声明式渲染 &amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is xxx. &amp;lt;/div&amp;gt; &amp;lt;/html&amp;gt;  这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。
 &amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is {{ name }}. &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var obj = new Vue({ el: &#39;#app&#39;, data: { name: &#39;Biao&#39; } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt;  这个代码很好懂，目的是用js动态填充文档元素里的{{name}}模板。

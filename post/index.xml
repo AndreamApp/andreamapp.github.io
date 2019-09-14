@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Andream</title>
-    <link>https://blog.andream.app/post/</link>
+    <link>https://andreamapp.github.io/post/</link>
     <description>Recent content in Posts on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Aug 2019 11:53:39 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.andream.app/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andreamapp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>【Go学习笔记】表达式</title>
-      <link>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <link>https://andreamapp.github.io/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
       <pubDate>Fri, 16 Aug 2019 11:53:39 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <guid>https://andreamapp.github.io/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
       <description>2.1 保留字  if else switch case for goto break continue default fallthrough var const type func interface struct import package map chan defer go range select  2.2 运算符 2.3 初始化 // var a struct { x int } = { 100 } // syntax error // var b []int = { 1, 2, 3 } // syntax error // c := struct {x int; y string} // syntax error: unexpected semicolon or newline // { // } var a = struct{ x int }{100} var b = []int{1, 2, 3} a := []int{ 1, 2, // ok }  2.</description>
     </item>
     
     <item>
       <title>【Go学习笔记】类型</title>
-      <link>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://andreamapp.github.io/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Thu, 15 Aug 2019 15:53:41 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://andreamapp.github.io/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%9E%8B/</guid>
       <description>1.1 变量  var 定义变量 静态类型，不能在运⾏行期改变变量类型 自动初始化为零 初始化类型推断 多变量定义 多变量赋值 占位变量_ 未使用局部变量视为错误 区分重新赋值和重新定义  var x int // 自动初始化 0 var y = 1 // 自动类型推断 int var ( a int = 2 b float32 = 3.14 c string = &amp;quot;test&amp;quot; d bool = true ) // 多变量定义 func main(){ a, b, d = 3, 3.1415, false // 多变量赋值 a := &amp;quot;test&amp;quot; // 重新定义 fmt.Println(a) }  1.2 常量  const定义常量 常量值必须是编译期可确定的数字、字符串、布尔值 不支持 1UL、2LL 这样的类型后缀 常量组中，如不提供类型和初始化值，那么视作与上⼀一常量相同 可以是len、cap、unsafe.</description>
     </item>
     
     <item>
       <title>Andream云同步协议解析</title>
-      <link>https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</link>
+      <link>https://andreamapp.github.io/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Wed, 14 Aug 2019 13:29:23 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://andreamapp.github.io/post/andream%E4%BA%91%E5%90%8C%E6%AD%A5%E5%8D%8F%E8%AE%AE%E8%A7%A3%E6%9E%90/</guid>
       <description>用户需求  每个客户端有一个sqlite数据库，存储了用户的笔记数据； 每条笔记数据包含id, title, content, created_time, modified_time, trash等字段； 在离线状态下，用户可对笔记做增删改操作，称为变更； 在在线状态下，需要将客户端产生的变更同步到服务器上，称为上同步； 在在线状态下，需要将其他客户端产生的变更同步到本客户端，称为下同步；  技术讨论  为了提高服务的稳定性，需要使用CS架构； 数据一定以某种形式存储在服务器上。可以是sql数据库（mysql）或nosql数据库（mongodb），由于服务端不需复杂数据查询，甚至可以是某种有组织的文件形式。  对于不同的技术路线，要问三个问题：
  存储什么数据？ 如何存储？ 如何将这些数据从客户端传输到服务端？  下面讨论我想到的四种技术路线：
  直接同步整个数据库文件 离线存储并同步变更 在线发布和订阅变更 基于时间戳协商的变更识别和冲突解决的同步策略  1. 直接同步整个数据库文件 这种办法最为简单粗暴，客户端不需要另外存储数据，服务端需要存储不同时间结点的sqlite数据库文件； 按文件方式存储； 可使用ftp或http传输数据。
@@ -58,10 +58,10 @@
     
     <item>
       <title>【笔试100题】小Q的歌单</title>
-      <link>https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</link>
+      <link>https://andreamapp.github.io/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</link>
       <pubDate>Tue, 13 Aug 2019 13:07:54 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</guid>
+      <guid>https://andreamapp.github.io/post/%E7%AC%94%E8%AF%95100%E9%A2%98%E5%B0%8Fq%E7%9A%84%E6%AD%8C%E5%8D%95/</guid>
       <description> 试题链接：https://www.nowcoder.com/questionTerminal/f3ab6fe72af34b71a2fd1d83304cbbb3
 背包问题 可以将该问题视为背包问题。
  歌单为背包，容量为K； 歌曲为物品，共有X+Y件物品； 求恰好装满的方案数  其实就是01背包问题，可以使用动态规划解决。算法复杂度O((X+Y)K)=O(10^5)。如果使用组合数计算可优化到O((X+Y)^2)=O(10^4)。本文使用动态规划解决。
@@ -74,10 +74,10 @@ int p(int i){ return i &amp;lt;= X ? A : B; }  滚动数组 注意到转移方�
     
     <item>
       <title>Unity学习资源</title>
-      <link>https://blog.andream.app/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
+      <link>https://andreamapp.github.io/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</link>
       <pubDate>Thu, 25 Apr 2019 08:58:30 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
+      <guid>https://andreamapp.github.io/post/unity%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/</guid>
       <description>官方资料  Unity Manual
  Scripting API
   视频资料  史上最全Unity3D教程
@@ -90,10 +90,10 @@ int p(int i){ return i &amp;lt;= X ? A : B; }  滚动数组 注意到转移方�
     
     <item>
       <title>Tensorboard的使用</title>
-      <link>https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://andreamapp.github.io/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Mon, 08 Apr 2019 19:50:17 +0800</pubDate>
       
-      <guid>https://blog.andream.app/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://andreamapp.github.io/post/tensorboard%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description> 基本使用 tensorboard --logdir=data/tensorboard  问题1：多个记录文件警告 如果指定logdir下存在多个记录文件，会出现警告：
 Found more than one metagraph event per run. Overwriting the metagraph with the newest event.
 即只会展示最新的graph，但不影响使用。如果要显示指定的记录文件，可以手动将其复制到一个子文件夹。
@@ -105,10 +105,10 @@ start &amp;quot;http://localhost:8888&amp;quot; tensorboard --logdir=data/tensor
     
     <item>
       <title>用Sublime画UML</title>
-      <link>https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/</link>
+      <link>https://andreamapp.github.io/post/%E7%94%A8sublime%E7%94%BBuml/</link>
       <pubDate>Tue, 09 Oct 2018 20:45:00 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E7%94%A8sublime%E7%94%BBuml/</guid>
+      <guid>https://andreamapp.github.io/post/%E7%94%A8sublime%E7%94%BBuml/</guid>
       <description>最近由于UML作业，又要画图了。本人非常讨厌用电脑画图，对齐都要对半天，再整几十个工具箱，看到就想砸电脑。于是去Github寻寻觅觅，找到了PlantUML —— 用文字描述UML，然后自动生成图片。再结合Sublime的插件，就能一键预览，这就是我要的。
 如下图，按下Alt+M预览图片，用Alt+Shift+2分屏
 首先默认你已经安装Java和Sublime，下面简单说下配置的过程：
@@ -128,10 +128,10 @@ Chrome插件PlantUML Viewer，实时绘制本地uml文本：chrome.google.com
     
     <item>
       <title>【零零碎碎】batch编程</title>
-      <link>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</link>
+      <link>https://andreamapp.github.io/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Wed, 03 Oct 2018 12:07:23 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://andreamapp.github.io/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Ebatch%E7%BC%96%E7%A8%8B/</guid>
       <description> 关于路径  Q: 如何引用相对目录/文件？
  A: %~dp0表示当前batch文件所在的目录，以\结尾。
 示例 // 不好的写法 forever start -c python C:\Users\Andream\Desktop\utils\dr.py // 正常的写法1 forever start -c python %~dp0dr.py // 正常的写法2 cd %~dp0 forever start -c python dr.py  // 不好的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;C:\Users\Andream\Desktop\src\andreamapp\source\_posts\temp.md&amp;quot; // 正常的写法 hexo new temp &amp;amp;&amp;amp; sub.lnk &amp;quot;%~dp0source\_posts\temp.md&amp;quot;  </description>
@@ -139,10 +139,10 @@ Chrome插件PlantUML Viewer，实时绘制本地uml文本：chrome.google.com
     
     <item>
       <title>【零零碎碎】Linux命令之情景交融</title>
-      <link>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</link>
+      <link>https://andreamapp.github.io/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</link>
       <pubDate>Mon, 01 Oct 2018 18:47:47 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</guid>
+      <guid>https://andreamapp.github.io/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8Elinux%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%83%85%E6%99%AF%E4%BA%A4%E8%9E%8D/</guid>
       <description>1. yum -y install中的-y是什么 就是当遇到Is this OK[y/d/N]提问时自动回答y
 yum速查
 2. netstat 查看端口被哪个程序占用： netstat -lptu
@@ -157,10 +157,10 @@ How to Configure NGINX
     
     <item>
       <title>从做一个计算器出发学习CSS</title>
-      <link>https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</link>
+      <link>https://andreamapp.github.io/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</link>
       <pubDate>Wed, 26 Sep 2018 19:37:09 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</guid>
+      <guid>https://andreamapp.github.io/post/%E4%BB%8E%E5%81%9A%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8%E5%87%BA%E5%8F%91%E5%AD%A6%E4%B9%A0css/</guid>
       <description>认识是从实践中来，到实践中去，在实践中接受检验。
  计算器是网页初学者经常做的了，我的这个例子用Vue来控制面板数据和计算操作，用table和v-for做界面，用CSS控制布局和样式。
 做计算器的过程中更加了解了如何正确地使用CSS，因此记录一下，希望能多一些这种经验，总结出自己的学习模式。
@@ -177,10 +177,10 @@ class = ClassObject(state), class ⊂ CSS.allClasses, state ⊂ Vue.data  而Vue
     
     <item>
       <title>解决npm install -g not found</title>
-      <link>https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</link>
+      <link>https://andreamapp.github.io/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</link>
       <pubDate>Sat, 22 Sep 2018 14:29:36 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</guid>
+      <guid>https://andreamapp.github.io/post/%E8%A7%A3%E5%86%B3npm-install-g-not-found/</guid>
       <description> 场景 # npm install hexo -g  使用-g命令安装npm全局包，之后就可以在命令行中全局使用。
 错误 安装成功后提示下面的错误：
 # hexo -bash: hexo: command not found  分析 发现hexo并不在path目录下：
@@ -192,20 +192,20 @@ class = ClassObject(state), class ⊂ CSS.allClasses, state ⊂ Vue.data  而Vue
     
     <item>
       <title>Codeforces 1051</title>
-      <link>https://blog.andream.app/post/codeforces-1051/</link>
+      <link>https://andreamapp.github.io/post/codeforces-1051/</link>
       <pubDate>Fri, 21 Sep 2018 00:35:24 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/codeforces-1051/</guid>
+      <guid>https://andreamapp.github.io/post/codeforces-1051/</guid>
       <description>A 分类讨论
 #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; int T; string s; void rps(int t1, int t2){ t1--; t2--; for(int i = 0; i &amp;lt; s.size(); i++){ char c = s[i]; if(0 == t1 &amp;amp;&amp;amp; c &amp;gt;= &#39;a&#39; &amp;amp;&amp;amp; c &amp;lt;= &#39;z&#39;){ s[i] = 1 == t2 ? &#39;A&#39; : 2 == t2 ? &#39;0&#39; : s[i]; } else if(1 == t1 &amp;amp;&amp;amp; c &amp;gt;= &#39;A&#39; &amp;amp;&amp;amp; c &amp;lt;= &#39;Z&#39;){ s[i] = 0 == t2 ?</description>
     </item>
     
     <item>
       <title>《UML精粹》读书笔记</title>
-      <link>https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>https://andreamapp.github.io/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 14 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://andreamapp.github.io/post/uml%E7%B2%BE%E7%B2%B9%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description> 引言 UML使用方式  UML在软件开发中作用的实质是人们不同的使用方式。
  作者在引言第一节就抛出了本书关键的一个问题：你想使用好UML吗？先问问自己你为什么要用UML，你期望用UML做什么？
 UML三种使用方法： 1. 草图 UML as sketch 2. 蓝图 UML as blueprint 3. 编程语言 UML as programing language
@@ -228,10 +228,10 @@ UML到底用作什么，UML和设计的关系为何？引起很多争议。作�
     
     <item>
       <title>Vue入门</title>
-      <link>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</link>
+      <link>https://andreamapp.github.io/post/vue%E5%85%A5%E9%97%A8/</link>
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/vue%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://andreamapp.github.io/post/vue%E5%85%A5%E9%97%A8/</guid>
       <description>有基础的HTML+CSS+JS知识就阔以搞起了
  Hello Vue —— 声明式渲染 &amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is xxx. &amp;lt;/div&amp;gt; &amp;lt;/html&amp;gt;  这是一个最简单的网页了，略去了网页其他不必要的细节，我打算据此引入Vue的使用。
 &amp;lt;html&amp;gt; &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; Hello Vue, My name is {{ name }}. &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/vue&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; var obj = new Vue({ el: &#39;#app&#39;, data: { name: &#39;Biao&#39; } }) &amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt;  这个代码很好懂，目的是用js动态填充文档元素里的{{name}}模板。
@@ -244,20 +244,20 @@ UML到底用作什么，UML和设计的关系为何？引起很多争议。作�
     
     <item>
       <title>Vue基础</title>
-      <link>https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/</link>
+      <link>https://andreamapp.github.io/post/vue%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Thu, 13 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/vue%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://andreamapp.github.io/post/vue%E5%9F%BA%E7%A1%80/</guid>
       <description>ViewModel 使用Vue实例联系起HTML元素(View)和data(Model) 响应式 当data变化后会立即同步变化View 组件 所有视图可以视为以Vue实例为根的组件树，可以嵌套层叠，通过CSS控制布局和样式。封装为组件可提高抽象层次，方便复用
 模板语法 {{ rawHtml }} &amp;lt;span v-html=&amp;quot;rawHtml&amp;quot;&amp;gt;&amp;lt;/span&amp;gt; v-bind:id=&amp;quot;dynamicId&amp;quot; v-bind:disabled=&amp;quot;isButtonDisabled&amp;quot; v-bind:id=&amp;quot;&#39;list-&#39; + id&amp;quot; v-if=&amp;quot;seen&amp;quot; v-on:click=&amp;quot;doSomething&amp;quot; v-bind:href=&amp;quot;url&amp;quot; 缩写为 :href=&amp;quot;url&amp;quot; v-on:click=&amp;quot;doSomething&amp;quot; 缩写为 @click=&amp;quot;doSomething&amp;quot;  计算属性 // {{ message.split(&#39;&#39;).reverse().join(&#39;&#39;) }} {{ reversedMessage }} var vm = new Vue({ el: &#39;#example&#39;, data: { message: &#39;Hello&#39; }, computed: { // 计算属性的 getter reversedMessage: function () { // `this` 指向 vm 实例 return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;) } } })  计算属性和函数区别：计算属性是基于它们的依赖进行缓存的。只在相关依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。</description>
     </item>
     
     <item>
       <title>杂谈</title>
-      <link>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</link>
+      <link>https://andreamapp.github.io/post/%E6%9D%82%E8%B0%88/</link>
       <pubDate>Mon, 10 Sep 2018 17:11:29 +0000</pubDate>
       
-      <guid>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</guid>
+      <guid>https://andreamapp.github.io/post/%E6%9D%82%E8%B0%88/</guid>
       <description>开学一周了，国创的事情已经告一段落，以一个学生的身份来说，我的任务首先是把课程过了。这个学期有机器学习、Web开发、信息安全、图形学、UML、需求分析、大数据、多媒体、DirectX这十门课，每天两节课，周末空闲。如何安排这空闲的大半时间？
 如我前两年一般，把大部分时间用到课业学习已经不现实。即使我在这些课花很多时间也不一定就能学好——我并不都感兴趣，何况不能指望30个小时胡吹和稀稀零零的作业就能学好十门课。我必须有所选择，对于感兴趣的课程，就应当多下功夫，至于其他课程，按部就班通过就好。
 除了上课，还想做点实际的，这是我真正的兴趣所在。 1. 升级一下Cqueue，加一些类似分享和笔记的功能； 2. 升级一下Note，加一个云同步、指纹解锁； 3. 做一个手机端的Shell，用来做自己的桌面，类似Aris Launcher那样，最好还能支持一些脚本
