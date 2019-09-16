@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>瞎扯 on Andream</title>
-    <link>https://andreamapp.github.io/tags/%E7%9E%8E%E6%89%AF/</link>
+    <link>https://blog.andream.app/tags/%E7%9E%8E%E6%89%AF/</link>
     <description>Recent content in 瞎扯 on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Sep 2018 17:11:29 +0000</lastBuildDate>
     
-	<atom:link href="https://andreamapp.github.io/tags/%E7%9E%8E%E6%89%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.andream.app/tags/%E7%9E%8E%E6%89%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>杂谈</title>
-      <link>https://andreamapp.github.io/post/%E6%9D%82%E8%B0%88/</link>
+      <link>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</link>
       <pubDate>Mon, 10 Sep 2018 17:11:29 +0000</pubDate>
       
-      <guid>https://andreamapp.github.io/post/%E6%9D%82%E8%B0%88/</guid>
+      <guid>https://blog.andream.app/post/%E6%9D%82%E8%B0%88/</guid>
       <description>开学一周了，国创的事情已经告一段落，以一个学生的身份来说，我的任务首先是把课程过了。这个学期有机器学习、Web开发、信息安全、图形学、UML、需求分析、大数据、多媒体、DirectX这十门课，每天两节课，周末空闲。如何安排这空闲的大半时间？
 如我前两年一般，把大部分时间用到课业学习已经不现实。即使我在这些课花很多时间也不一定就能学好——我并不都感兴趣，何况不能指望30个小时胡吹和稀稀零零的作业就能学好十门课。我必须有所选择，对于感兴趣的课程，就应当多下功夫，至于其他课程，按部就班通过就好。
 除了上课，还想做点实际的，这是我真正的兴趣所在。 1. 升级一下Cqueue，加一些类似分享和笔记的功能； 2. 升级一下Note，加一个云同步、指纹解锁； 3. 做一个手机端的Shell，用来做自己的桌面，类似Aris Launcher那样，最好还能支持一些脚本
