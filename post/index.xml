@@ -6,19 +6,10 @@
     <description>Recent content in Posts on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 14:47:38 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2019 11:53:39 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.andream.app/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>【Go学习笔记】函数</title>
-      <link>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Fri, 16 Aug 2019 14:47:38 +0800</pubDate>
-      
-      <guid>https://blog.andream.app/post/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%87%BD%E6%95%B0/</guid>
-      <description> 3.1 函数定义 3.2 变参 3.3 返回值 3.4 匿名函数 3.5 延迟调用 3.6 错误处理 </description>
-    </item>
     
     <item>
       <title>【Go学习笔记】表达式</title>
