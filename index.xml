@@ -6,10 +6,24 @@
     <description>Recent content on Andream</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Aug 2019 11:53:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2019 22:17:49 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.andream.app/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>视频行为识别综述</title>
+      <link>https://blog.andream.app/post/%E8%A7%86%E9%A2%91%E8%A1%8C%E4%B8%BA%E8%AF%86%E5%88%AB%E7%BB%BC%E8%BF%B0/</link>
+      <pubDate>Tue, 17 Sep 2019 22:17:49 +0800</pubDate>
+      
+      <guid>https://blog.andream.app/post/%E8%A7%86%E9%A2%91%E8%A1%8C%E4%B8%BA%E8%AF%86%E5%88%AB%E7%BB%BC%E8%BF%B0/</guid>
+      <description> 定义 人体行为 一个视频片段中的人体动作的语义
+按照复杂程度分为3个层级：
+ 动作（Action） 行为（Behavior） 活动（Activity）  按照步骤分为3个子问题：
+ 人体检测 与视觉无关的姿势表示 行为理解  人体行为识别 使用模式识别、机器学习方法构造一个模型：视频 -&amp;gt; 人体行为
+基于手动特征的行为识别方法 一般处理流程：
+基于深度学习的行为识别方法 行为识别数据集与评价指标 </description>
+    </item>
     
     <item>
       <title>【Go学习笔记】表达式</title>
